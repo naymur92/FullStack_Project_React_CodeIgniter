@@ -7,10 +7,6 @@ use App\Models\ProductModel;
 
 class Products extends ResourceController
 {
-    // function __construct()
-    // {
-    //     helper(['form', 'url']);
-    // }
 
     /**
      * Return an array of resource objects, themselves in array format
@@ -19,6 +15,7 @@ class Products extends ResourceController
      */
     public function index()
     {
+        $data['title'] = "All Products";
         $model = new ProductModel();
         $data['products'] = $model->findAll();
 
@@ -32,6 +29,7 @@ class Products extends ResourceController
      */
     public function show($id = null)
     {
+        $data['title'] = "View Product";
         $model = new ProductModel();
         $data['product'] = $model->find($id);
 
@@ -45,7 +43,8 @@ class Products extends ResourceController
      */
     public function new()
     {
-        return view('products/add_product');
+        $data['title'] = "Add Product";
+        return view('products/add_product', $data);
     }
 
     /**
@@ -62,9 +61,7 @@ class Products extends ResourceController
         ]);
 
         if (!$validate) {
-            // $data['errors'] = $this->validator->getErrors();
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
-            // print_r($data);
         } else {
             $model = new ProductModel();
             $data = $this->request->getPost();
@@ -82,6 +79,7 @@ class Products extends ResourceController
      */
     public function edit($id = null)
     {
+        $data['title'] = "Edit Product";
         $model = new ProductModel();
         $data['product'] = $model->find($id);
 
