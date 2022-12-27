@@ -13,7 +13,7 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="<?= site_url(); ?>">Home</a></li>
             <li class="breadcrumb-item active">All Products</li>
           </ol>
         </div><!-- /.col -->
@@ -41,6 +41,7 @@
                     <th>Product Name</th>
                     <th>Product Details</th>
                     <th>Product Price</th>
+                    <th>Creation Time</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -53,9 +54,11 @@
                       <td><?= $sl_no; ?></td>
                       <td><?= $product['product_name']; ?></td>
                       <td><?= $product['product_details']; ?></td>
-                      <td><?= $product['product_price']; ?></td>
+                      <td>Tk. <?= $product['product_price']; ?></td>
+                      <td><?= date("d M, Y - h:i A", strtotime($product['product_creation_time'])); ?></td>
                       <td>
-                        <a href="/products/edit/<?= $product['id']; ?>" class="mx-2"><i class="fa fa-pen text-primary"></i></a>
+                        <a href="/products/show/<?= $product['id']; ?>" class="mx-2"><i class="fa fa-eye text-primary"></i></a>
+                        <a href="/products/edit/<?= $product['id']; ?>" class="mx-2"><i class="fa fa-pen text-success"></i></a>
                         <a href="/products/delete/<?= $product['id']; ?>" class="mx-2"><i class="fa fa-trash text-danger"></i></a>
                       </td>
                     </tr>
@@ -70,6 +73,7 @@
                     <th>Product Name</th>
                     <th>Product Details</th>
                     <th>Product Price</th>
+                    <th>Creation Time</th>
                     <th>Action</th>
                   </tr>
                 </tfoot>

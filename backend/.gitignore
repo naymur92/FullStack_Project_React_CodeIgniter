@@ -2,6 +2,8 @@
 # Operating Specific Junk Files
 #-------------------------
 
+AdminLTE-3.2.0/
+
 # OS X
 .DS_Store
 .AppleDouble
@@ -41,7 +43,7 @@ $RECYCLE.BIN/
 #-------------------------
 # These should never be under version control,
 # as it poses a security risk.
-.env
+# .env
 .vagrant
 Vagrantfile
 

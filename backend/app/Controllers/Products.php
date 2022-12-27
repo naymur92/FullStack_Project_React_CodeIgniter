@@ -7,6 +7,11 @@ use App\Models\ProductModel;
 
 class Products extends ResourceController
 {
+    // function __construct()
+    // {
+    //     helper(['form', 'url']);
+    // }
+
     /**
      * Return an array of resource objects, themselves in array format
      *
@@ -27,7 +32,10 @@ class Products extends ResourceController
      */
     public function show($id = null)
     {
-        //
+        $model = new ProductModel();
+        $data['product'] = $model->find($id);
+
+        return view('products/show_product', $data);
     }
 
     /**
@@ -37,7 +45,7 @@ class Products extends ResourceController
      */
     public function new()
     {
-        //
+        return view('products/add_product');
     }
 
     /**
@@ -47,7 +55,24 @@ class Products extends ResourceController
      */
     public function create()
     {
-        //
+        $validate = $this->validate([
+            'product_name' => 'required|min_length[5]|max_length[50]',
+            'product_details' => 'required|min_length[20]',
+            'product_price' => 'required|numeric',
+        ]);
+
+        if (!$validate) {
+            // $data['errors'] = $this->validator->getErrors();
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+            // print_r($data);
+        } else {
+            $model = new ProductModel();
+            $data = $this->request->getPost();
+
+            if ($model->save($data)) {
+                return redirect()->to('products');
+            }
+        }
     }
 
     /**
@@ -57,7 +82,10 @@ class Products extends ResourceController
      */
     public function edit($id = null)
     {
-        //
+        $model = new ProductModel();
+        $data['product'] = $model->find($id);
+
+        return view('products/edit_product', $data);
     }
 
     /**
@@ -67,7 +95,12 @@ class Products extends ResourceController
      */
     public function update($id = null)
     {
-        //
+        $model = new ProductModel();
+        $data = $this->request->getPost();
+
+        if ($model->update($id, $data)) {
+            return redirect()->to('products');
+        }
     }
 
     /**
