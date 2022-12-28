@@ -1,6 +1,5 @@
 <?php
 $session = session();
-
 if ($session->has('errors')) {
   $errors = $session->errors;
 }
@@ -41,7 +40,7 @@ if ($session->has('errors')) {
             <div class="card-header bg-primary">
               <h1 class="text-center text-light">Product Entry Form</h1>
             </div>
-            <form action="/products/create" method="POST">
+            <form action="<?= base_url('products/create') ?>" method="POST">
               <div class="card-body">
                 <div class="form-group">
                   <label for="_pname"><strong>Product Name:</strong></label>

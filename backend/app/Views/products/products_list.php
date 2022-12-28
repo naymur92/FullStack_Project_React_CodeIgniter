@@ -2,6 +2,12 @@
 <?= view('layouts/navbar'); ?>
 <?= view('layouts/main_sidebar'); ?>
 
+<?php if (session()->has('msg')) : ?>
+  <script>
+    alert('<?= session()->msg; ?>');
+  </script>
+<?php endif; ?>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -30,7 +36,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">DataTable with default features</h3>
+              <h3 class="card-title">Products List</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -57,9 +63,9 @@
                       <td>Tk. <?= $product['product_price']; ?></td>
                       <td><?= date("d M, Y - h:i A", strtotime($product['product_creation_time'])); ?></td>
                       <td>
-                        <a href="/products/show/<?= $product['id']; ?>" class="mx-2"><i class="fa fa-eye text-primary"></i></a>
-                        <a href="/products/edit/<?= $product['id']; ?>" class="mx-2"><i class="fa fa-pen text-success"></i></a>
-                        <a href="/products/delete/<?= $product['id']; ?>" class="mx-2"><i class="fa fa-trash text-danger"></i></a>
+                        <a href="<?= site_url('products/show/' . $product['id']); ?>" class="mx-2"><i class="fa fa-eye text-primary"></i></a>
+                        <a href="<?= site_url('products/edit/' . $product['id']); ?>" class="mx-2"><i class="fa fa-pen text-success"></i></a>
+                        <a href="<?= site_url('products/delete/' . $product['id']); ?>" class="mx-2"><i class="fa fa-trash text-danger"></i></a>
                       </td>
                     </tr>
                   <?php

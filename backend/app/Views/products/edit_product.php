@@ -1,3 +1,11 @@
+<?php
+$session = session();
+
+if ($session->has('errors')) {
+  $errors = $session->errors;
+}
+?>
+
 <?= view('layouts/header_editor'); ?>
 <?= view('layouts/navbar'); ?>
 <?= view('layouts/main_sidebar'); ?>
@@ -37,15 +45,24 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="_pname"><strong>Product Name:</strong></label>
-                  <input type="text" id="_pname" name="product_name" value="<?= $product['product_name']; ?>" placeholder="Enter Product Name" class="form-control">
+                  <input type="text" id="_pname" name="product_name" value="<?= old('product_name') ? old('product_name') : $product['product_name'] ?>" placeholder="Enter Product Name" class="form-control">
+                  <?php if (isset($errors['product_name'])) : ?>
+                    <div class="alert alert-warning my-2"><?= $errors['product_name']; ?></div>
+                  <?php endif; ?>
                 </div>
                 <div class="form-group">
                   <label for="summernote"><strong>Product Details:</strong></label>
-                  <textarea id="summernote" name="product_details" row="5" class="form-control"><?= $product['product_details']; ?></textarea>
+                  <textarea id="summernote" name="product_details" row="5" class="form-control"><?= old('product_details') ? old('product_details') : $product['product_details'] ?></textarea>
+                  <?php if (isset($errors['product_details'])) : ?>
+                    <div class="alert alert-warning my-2"><?= $errors['product_details']; ?></div>
+                  <?php endif; ?>
                 </div>
                 <div class="form-group">
                   <label for="_pprice"><strong>Product Price:</strong></label>
-                  <input type="number" id="_pprice" name="product_price" value="<?= $product['product_price']; ?>" placeholder="Enter Product Price" class="form-control">
+                  <input type="number" id="_pprice" name="product_price" value="<?= old('product_price') ? old('product_price') : $product['product_price'] ?>" placeholder="Enter Product Price" class="form-control">
+                  <?php if (isset($errors['product_price'])) : ?>
+                    <div class="alert alert-warning my-2"><?= $errors['product_price']; ?></div>
+                  <?php endif; ?>
                 </div>
               </div>
               <div class="card-footer">
