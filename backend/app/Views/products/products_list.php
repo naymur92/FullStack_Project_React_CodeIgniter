@@ -45,22 +45,33 @@
                   <tr>
                     <th>SL No.</th>
                     <th>Product Name</th>
-                    <th>Product Details</th>
+                    <th>Product Category</th>
                     <th>Product Price</th>
+                    <th>Product Image</th>
                     <th>Creation Time</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php
-                  $sl_no = 1;
-                  foreach ($products as $product) :
+                  foreach ($products as $index => $product) :
                   ?>
                     <tr>
-                      <td><?= $sl_no; ?></td>
+                      <td><?= $index + 1; ?></td>
                       <td><?= $product['product_name']; ?></td>
-                      <td><?= $product['product_details']; ?></td>
+                      <?php
+                      foreach ($categories as $cat) :
+                        if ($cat['cat_id'] == $product['product_category']) :
+                      ?>
+                          <td><?= $cat['category_name'] ?></td>
+                      <?php
+                        endif;
+                      endforeach;
+                      ?>
                       <td>Tk. <?= $product['product_price']; ?></td>
+                      <td>
+                        <img src="/assets/images/products/<?= $product['product_image']; ?>" class="img-thumbnail" width="100px" alt="">
+                      </td>
                       <td><?= date("d M, Y - h:i A", strtotime($product['product_creation_time'])); ?></td>
                       <td>
                         <a href="<?= site_url('products/show/' . $product['id']); ?>" class="mx-2"><i class="fa fa-eye text-primary"></i></a>
@@ -69,7 +80,6 @@
                       </td>
                     </tr>
                   <?php
-                    $sl_no++;
                   endforeach;
                   ?>
                 </tbody>
@@ -77,8 +87,9 @@
                   <tr>
                     <th>SL No.</th>
                     <th>Product Name</th>
-                    <th>Product Details</th>
+                    <th>Product Category</th>
                     <th>Product Price</th>
+                    <th>Product Image</th>
                     <th>Creation Time</th>
                     <th>Action</th>
                   </tr>

@@ -11,23 +11,59 @@ class ProductsSeeder extends Seeder
         $products = [
             [
                 'product_name' => 'Shirt',
+                'product_category' => 1,
                 'product_details'    => 'Product details here',
                 'product_price'    => 150,
+                'product_image' => ''
             ],
             [
                 'product_name' => 'Red Shirt',
+                'product_category' => 1,
                 'product_details'    => 'Product details here',
                 'product_price'    => 150,
+                'product_image' => ''
             ],
             [
                 'product_name' => 'White Shirt',
+                'product_category' => 1,
                 'product_details'    => 'Product details here',
                 'product_price'    => 150,
+                'product_image' => ''
             ],
             [
                 'product_name' => 'Black Shirt',
+                'product_category' => 1,
                 'product_details'    => 'Product details here',
                 'product_price'    => 150,
+                'product_image' => ''
+            ],
+            [
+                'product_name' => 'Pant',
+                'product_category' => 2,
+                'product_details'    => 'Product details here',
+                'product_price'    => 1150,
+                'product_image' => ''
+            ],
+            [
+                'product_name' => 'Red Pant',
+                'product_category' => 2,
+                'product_details'    => 'Product details here',
+                'product_price'    => 1150,
+                'product_image' => ''
+            ],
+            [
+                'product_name' => 'White Pant',
+                'product_category' => 2,
+                'product_details'    => 'Product details here',
+                'product_price'    => 1150,
+                'product_image' => ''
+            ],
+            [
+                'product_name' => 'Black Pant',
+                'product_category' => 2,
+                'product_details'    => 'Product details here',
+                'product_price'    => 1150,
+                'product_image' => ''
             ]
         ];
 

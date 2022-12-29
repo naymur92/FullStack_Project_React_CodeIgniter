@@ -40,7 +40,7 @@ if ($session->has('errors')) {
             <div class="card-header bg-primary">
               <h1 class="text-center text-light">Product Entry Form</h1>
             </div>
-            <form action="<?= base_url('products/create') ?>" method="POST">
+            <form action="<?= base_url('products/create') ?>" method="POST" enctype="multipart/form-data">
               <div class="card-body">
                 <div class="form-group">
                   <label for="_pname"><strong>Product Name:</strong></label>
@@ -48,6 +48,34 @@ if ($session->has('errors')) {
                   <?php if (isset($errors['product_name'])) : ?>
                     <div class="alert alert-warning my-2"><?= $errors['product_name']; ?></div>
                   <?php endif; ?>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="_pcategory"><strong>Product Category:</strong></label>
+                      <select name="product_category" id="_pcategory" class="form-control">
+                        <option value="" selected>Select One</option>
+                        <?php foreach ($categories as $category) : ?>
+                          <option value="<?= $category['cat_id']; ?>" <?= old('product_category') == $category['cat_id'] ? 'selected' : '' ?>><?= $category['category_name']; ?></option>
+                        <?php endforeach; ?>
+                      </select>
+                      <?php if (isset($errors['product_category'])) : ?>
+                        <div class="alert alert-warning my-2"><?= $errors['product_category']; ?></div>
+                      <?php endif; ?>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="_pimage"><strong>Product Image:</strong></label>
+                      <input type="file" id="_pimage" name="product_image" onchange="readURL(this)" class="form-control">
+                      <?php if (isset($errors['product_image'])) : ?>
+                        <div class="alert alert-warning my-2"><?= $errors['product_image']; ?></div>
+                      <?php endif; ?>
+
+                      <!-- Show selected photo -->
+                      <img src="" id="showSelectedPhoto" class="img-thumbnail mt-2" width="150px" alt="selected image">
+                    </div>
+                  </div>
                 </div>
                 <div class="form-group">
                   <label for="summernote"><strong>Product Details:</strong></label>
