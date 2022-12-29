@@ -81,13 +81,13 @@ function isOpen($param)
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="/products" class="nav-link <?= isActive('products'); ?>">
+              <a href="<?= site_url('products'); ?>" class="nav-link <?= isActive('products'); ?>">
                 <i class="far fa-circle nav-icon"></i>
                 <p>All Products</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="/products/new" class="nav-link <?= isActive('new'); ?>">
+              <a href="<?= site_url('products/new'); ?>" class="nav-link <?= isActive('new'); ?>">
                 <i class="far fa-circle nav-icon"></i>
                 <p>New Product</p>
               </a>
