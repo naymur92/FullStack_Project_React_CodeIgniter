@@ -6,10 +6,10 @@ use App\Controllers\BaseController;
 
 class Dashboard extends BaseController
 {
-    public function index()
-    {
-        $data['title'] = "Dashboard";
+  public function index()
+  {
+    $data['title'] = "Dashboard";
 
-        return view('admin_home', $data);
-    }
+    return view('admin_home', $data);
+  }
 }

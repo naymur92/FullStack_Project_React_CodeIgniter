@@ -15,6 +15,11 @@
 
   <!-- Right navbar links -->
   <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link btn btn-danger text-light" href="<?= base_url('logout') ?>">
+        Logout
+      </a>
+    </li>
     <!-- Navbar Search -->
     <li class="nav-item">
       <a class="nav-link" data-widget="navbar-search" href="#" role="button">

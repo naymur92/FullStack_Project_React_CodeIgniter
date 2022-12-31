@@ -35,9 +35,19 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Dashboard::index');
+$routes->group('', ['filter' => 'authGuard'], static function ($routes) {
+    $routes->get('/', 'Dashboard::index');
+    $routes->resource('Product');
 
-$routes->resource('Product');
+    $routes->get('logout', 'SignIn::logOut');
+});
+
+
+$routes->get('signup', 'SignUp::index');
+$routes->post('signup/store', 'SignUp::store');
+$routes->get('signin', 'SignIn::index');
+$routes->post('signin/auth', 'SignIn::loginAuth');
+
 
 /*
  * --------------------------------------------------------------------
