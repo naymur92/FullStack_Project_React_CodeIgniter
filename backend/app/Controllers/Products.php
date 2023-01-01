@@ -231,8 +231,7 @@ class Products extends ResourceController
   {
     $model = new ProductModel();
     if ($model->delete($id)) {
-      // return redirect()->to(site_url('products'))->with('msg', 'Successfull Deleted');
-      echo "Successfully Deleted";
+      return redirect()->to(site_url('products'))->with('msg', 'Successfull Deleted');
     }
   }
 }

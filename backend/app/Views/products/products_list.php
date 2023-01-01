@@ -76,7 +76,7 @@
                       <td>
                         <a href="<?= site_url('products/show/' . $product['id']); ?>" class="mx-2"><i class="fa fa-eye text-primary"></i></a>
                         <a href="<?= site_url('products/edit/' . $product['id']); ?>" class="mx-2"><i class="fa fa-pen text-success"></i></a>
-                        <a role="button" class="delete" data="<?= $product['id']; ?>" class="mx-2"><i class="fa fa-trash text-danger"></i></a>
+                        <a href="<?= base_url('products/delete/' . $product['id']); ?>" class="mx-2 delete"><i class="fa fa-trash text-danger"></i></a>
                       </td>
                     </tr>
                   <?php
@@ -113,10 +113,10 @@
 
 <script>
   $(function() {
-    $(".delete").click(function() {
-      var id = $(this).attr('data');
-      $.post('products/delete/' + id, function(data) {
-        alert(data);
+    $(".delete").click(function(e) {
+      e.preventDefault();
+      $.post(this.href, function() {
+        alert('Successfully Deleted');
         location.reload();
       });
     });
