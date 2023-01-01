@@ -217,7 +217,7 @@ class Products extends ResourceController
       $data['product_image'] = $filename;
 
       if ($model->update($id, $data)) {
-        return redirect()->to(site_url('products'))->with('msg', 'Updated Successfully');
+        return redirect()->to(site_url('products'))->with('msg', 'Successfully Updated');
       }
     }
   }
@@ -231,7 +231,8 @@ class Products extends ResourceController
   {
     $model = new ProductModel();
     if ($model->delete($id)) {
-      return redirect()->to(site_url('products'))->with('msg', 'Successfull Deleted');
+      // return redirect()->to(site_url('products'))->with('msg', 'Successfull Deleted');
+      echo "Successfully Deleted";
     }
   }
 }
