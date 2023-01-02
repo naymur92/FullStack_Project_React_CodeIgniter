@@ -1,14 +1,17 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import ProductList from "./components/ProductList";
+import FrontTemplate from "./FrontTemplate";
+import Home from "./pages/Home";
+import Shop from "./pages/Shop";
 
 function App() {
   return (
     <Router>
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<ProductList />}></Route>
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<FrontTemplate />}>
+          <Route index element={<Home />} />
+          <Route path="/shop" element={<Shop />} />
+        </Route>
+      </Routes>
     </Router>
   );
 }
