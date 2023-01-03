@@ -38,12 +38,14 @@ $routes->set404Override();
 $routes->group('', ['filter' => 'authGuard'], static function ($routes) {
     $routes->get('/', 'Dashboard::index');
     $routes->presenter('products');
+    $routes->presenter('categories');
 
     $routes->get('logout', 'SignIn::logOut');
 });
 
 
 $routes->get('prodlists', 'FrontProducts::index');
+$routes->get('qb', 'Qb::index');
 
 $routes->get('signup', 'SignUp::index');
 $routes->post('signup/store', 'SignUp::store');

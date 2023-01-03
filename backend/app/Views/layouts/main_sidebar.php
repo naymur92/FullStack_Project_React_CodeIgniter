@@ -73,23 +73,46 @@ function isOpen($param)
         </li>
         <li class="nav-item <?= isOpen('products'); ?>">
           <a href="#" class="nav-link">
-            <i class="nav-icon fab fa-product-hunt"></i>
+            <i class="nav-icon fas fa-cheese"></i>
             <p>
-              Products
+              Product Management
               <i class="fas fa-angle-left right"></i>
             </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="<?= site_url('products'); ?>" class="nav-link <?= isActive('products'); ?>">
-                <i class="far fa-circle nav-icon"></i>
+              <a href="<?= site_url('products'); ?>" class="pl-5 nav-link <?= isActive('products'); ?>">
+                <i class="fa fa-solid fa-list mr-2"></i>
                 <p>All Products</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= site_url('products/new'); ?>" class="nav-link <?= isActive('new'); ?>">
-                <i class="far fa-circle nav-icon"></i>
+              <a href="<?= site_url('products/new'); ?>" class="pl-5 nav-link <?= isActive('new'); ?>">
+                <i class="fas fa-plus-square mr-2"></i>
                 <p>New Product</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item <?= isOpen('categories'); ?>">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-project-diagram"></i>
+            <p>
+              Category Management
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?= site_url('categories'); ?>" class="pl-5 nav-link <?= isActive('categories'); ?>">
+                <i class="fa fa-solid fa-list mr-2"></i>
+                <p>All Categories</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= site_url('categories/new'); ?>" class="pl-5 nav-link <?= isActive('new'); ?>">
+                <i class="fas fa-plus-square mr-2"></i>
+                <p>New Category</p>
               </a>
             </li>
           </ul>
