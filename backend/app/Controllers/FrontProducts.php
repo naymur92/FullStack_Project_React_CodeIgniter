@@ -11,9 +11,8 @@ class FrontProducts extends BaseController
     use ResponseTrait;
     public function index()
     {
-
         $model = new ProductModel();
-        $data = $model->orderBy('product_creation_time', 'DESC')->findAll();
+        $data = $model->orderBy('created_at', 'DESC')->findAll();
 
         return $this->respond($data);
     }

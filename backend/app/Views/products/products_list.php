@@ -45,9 +45,11 @@
                   <tr>
                     <th>SL No.</th>
                     <th>Product Name</th>
-                    <th>Product Category</th>
-                    <th>Product Price</th>
-                    <th>Product Image</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Status</th>
+                    <th>Thumbnail</th>
                     <th>Creation Time</th>
                     <th>Action</th>
                   </tr>
@@ -69,10 +71,12 @@
                       endforeach;
                       ?>
                       <td>Tk. <?= $product['product_price']; ?></td>
+                      <td><?= $product['product_stock']; ?></td>
+                      <td><?= ucfirst($product['product_status']); ?></td>
                       <td>
                         <img src="/assets/images/products/<?= $product['product_image']; ?>" class="img-thumbnail" width="100px" alt="">
                       </td>
-                      <td><?= date("d M, Y - h:i A", strtotime($product['product_creation_time'])); ?></td>
+                      <td><?= date("d M, Y - h:i A", strtotime($product['created_at'])); ?></td>
                       <td>
                         <a href="<?= site_url('products/show/' . $product['id']); ?>" class="mx-2"><i class="fa fa-eye text-primary"></i></a>
                         <a href="<?= site_url('products/edit/' . $product['id']); ?>" class="mx-2"><i class="fa fa-pen text-success"></i></a>
@@ -87,9 +91,11 @@
                   <tr>
                     <th>SL No.</th>
                     <th>Product Name</th>
-                    <th>Product Category</th>
-                    <th>Product Price</th>
-                    <th>Product Image</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Status</th>
+                    <th>Thumbnail</th>
                     <th>Creation Time</th>
                     <th>Action</th>
                   </tr>

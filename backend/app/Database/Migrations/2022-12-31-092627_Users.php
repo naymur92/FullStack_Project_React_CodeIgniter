@@ -30,6 +30,16 @@ class Users extends Migration
         'type' => 'CHAR',
         'constraint' => 64,
       ],
+      'role' => [
+        'type' => 'VARCHAR',
+        'constraint' => 15,
+        'default' => 'user',
+      ],
+      'status' => [
+        'type' => 'VARCHAR',
+        'constraint' => 15,
+        'default' => 'pending',
+      ],
       'created_at' => [
         'type' => 'DATETIME',
         'default' => new RawSql('CURRENT_TIMESTAMP')

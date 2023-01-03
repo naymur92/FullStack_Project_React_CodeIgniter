@@ -10,7 +10,7 @@ if ($session->has('errors')) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE | Sign Up</title>
+  <title>DairyFarm | Sign Up</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -25,7 +25,7 @@ if ($session->has('errors')) {
 <body class="hold-transition register-page">
   <div class="register-box">
     <div class="register-logo">
-      <a href="<?= base_url(); ?>"><b>Admin</b>LTE</a>
+      <a href="<?= base_url(); ?>"><b>DairyFarm</b>-Management</a>
     </div>
 
     <div class="card">

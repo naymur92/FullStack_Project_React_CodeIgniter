@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { API_PATH } from "../API_PATH";
+import axios from "axios";
 
 function Shop() {
+  const [products, setProducts] = useState([]);
+
+  const getProducts = async () => {
+    await axios.get(`${API_PATH}/prodlists`).then((res) => {
+      setProducts(res.data);
+    });
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
   return (
     <div className="archive shoppg post-type-archive post-type-archive-product woocommerce woocommerce-page body_style_wide body_filled article_style_stretch layout_excerpt template_excerpt scheme_original top_panel_show top_panel_above sidebar_show sidebar_left sidebar_outer_hide vc_responsive">
       <div className="top_panel_title top_panel_style_1 title_present breadcrumbs_present scheme_original">
@@ -53,438 +67,54 @@ function Shop() {
                 <input type="hidden" name="q" value="shop.html" />
               </form>
               <ul className="products">
-                <li className="product has-post-thumbnail column-1_3 first instock purchasable">
-                  <div className="post_item_wrap">
-                    <div className="post_featured">
-                      <div className="post_thumb">
+                {products?.map((product) => (
+                  <li
+                    key={product.id}
+                    className="product has-post-thumbnail column-1_3 instock purchasable"
+                  >
+                    <div className="post_item_wrap">
+                      <div className="post_featured">
+                        <div className="post_thumb">
+                          <a
+                            className="hover_icon hover_icon_link"
+                            href="single-product.html"
+                          >
+                            <img
+                              src={`${API_PATH}/assets/images/products/${product.product_image}`}
+                              className="attachment-shop_catalog size-shop_catalog"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                      </div>
+                      <div className="post_content">
+                        <h2 className="woocommerce-loop-product__title">
+                          <a href="single-product.html">
+                            {product.product_name}
+                          </a>
+                        </h2>
+                        <span className="price">
+                          <span className="woocommerce-Price-amount amount">
+                            <span className="woocommerce-Price-currencySymbol">
+                              &#2547;{" "}
+                            </span>
+                            {Number(product.product_price).toFixed(2)}
+                          </span>
+                        </span>
                         <a
-                          className="hover_icon hover_icon_link"
-                          href="single-product.html"
+                          rel="nofollow"
+                          role="button"
+                          data-quantity="1"
+                          data-product_id="471"
+                          data-product_sku=""
+                          className="button add_to_cart_button"
                         >
-                          <img
-                            src="/assets/images/2000x2000.png"
-                            className="attachment-shop_catalog size-shop_catalog"
-                            alt=""
-                          />
+                          Add to Cart
                         </a>
                       </div>
                     </div>
-                    <div className="post_content">
-                      <h2 className="woocommerce-loop-product__title">
-                        <a href="single-product.html">Pecorino Romano</a>
-                      </h2>
-                      <span className="price">
-                        <span className="woocommerce-Price-amount amount">
-                          <span className="woocommerce-Price-currencySymbol">
-                            &#36;
-                          </span>
-                          18.90
-                        </span>{" "}
-                        &ndash;
-                        <span className="woocommerce-Price-amount amount">
-                          <span className="woocommerce-Price-currencySymbol">
-                            &#36;
-                          </span>
-                          38.00
-                        </span>
-                      </span>
-                      <a
-                        rel="nofollow"
-                        href="single-product.html"
-                        data-quantity="1"
-                        data-product_id="471"
-                        data-product_sku=""
-                        className="button add_to_cart_button"
-                      >
-                        Select options
-                      </a>
-                    </div>
-                  </div>
-                </li>
-                <li className="product has-post-thumbnail column-1_3 instock purchasable">
-                  <div className="post_item_wrap">
-                    <div className="post_featured">
-                      <div className="post_thumb">
-                        <a
-                          className="hover_icon hover_icon_link"
-                          href="single-product.html"
-                        >
-                          <img
-                            src="/assets/images/2000x2000.png"
-                            className="attachment-shop_catalog size-shop_catalog"
-                            alt=""
-                          />
-                        </a>
-                      </div>
-                    </div>
-                    <div className="post_content">
-                      <h2 className="woocommerce-loop-product__title">
-                        <a href="single-product.html">Evaporated Milk</a>
-                      </h2>
-                      <span className="price">
-                        <span className="woocommerce-Price-amount amount">
-                          <span className="woocommerce-Price-currencySymbol">
-                            &#36;
-                          </span>
-                          4.90
-                        </span>{" "}
-                        &ndash;
-                        <span className="woocommerce-Price-amount amount">
-                          <span className="woocommerce-Price-currencySymbol">
-                            &#36;
-                          </span>
-                          8.99
-                        </span>
-                      </span>
-                      <a
-                        rel="nofollow"
-                        href="single-product.html"
-                        data-quantity="1"
-                        data-product_id="458"
-                        data-product_sku=""
-                        className="button add_to_cart_button"
-                      >
-                        Select options
-                      </a>
-                    </div>
-                  </div>
-                </li>
-                <li className="product has-post-thumbnail column-1_3 last instock purchasable">
-                  <div className="post_item_wrap">
-                    <div className="post_featured">
-                      <div className="post_thumb">
-                        <a
-                          className="hover_icon hover_icon_link"
-                          href="single-product.html"
-                        >
-                          <img
-                            src="/assets/images/2000x2000.png"
-                            className="attachment-shop_catalog size-shop_catalog"
-                            alt=""
-                          />
-                        </a>
-                      </div>
-                    </div>
-                    <div className="post_content">
-                      <h2 className="woocommerce-loop-product__title">
-                        <a href="single-product.html">Farm Sour Cream</a>
-                      </h2>
-                      <span className="price">
-                        <span className="woocommerce-Price-amount amount">
-                          <span className="woocommerce-Price-currencySymbol">
-                            &#36;
-                          </span>
-                          12.50
-                        </span>{" "}
-                        &ndash;
-                        <span className="woocommerce-Price-amount amount">
-                          <span className="woocommerce-Price-currencySymbol">
-                            &#36;
-                          </span>
-                          29.00
-                        </span>
-                      </span>
-                      <a
-                        rel="nofollow"
-                        href="single-product.html"
-                        data-quantity="1"
-                        data-product_id="448"
-                        data-product_sku=""
-                        className="button add_to_cart_button"
-                      >
-                        Select options
-                      </a>
-                    </div>
-                  </div>
-                </li>
-                <li className="product has-post-thumbnail column-1_3 first instock purchasable">
-                  <div className="post_item_wrap">
-                    <div className="post_featured">
-                      <div className="post_thumb">
-                        <a
-                          className="hover_icon hover_icon_link"
-                          href="single-product.html"
-                        >
-                          <img
-                            src="/assets/images/2000x2000.png"
-                            className="attachment-shop_catalog size-shop_catalog"
-                            alt=""
-                          />
-                        </a>
-                      </div>
-                    </div>
-                    <div className="post_content">
-                      <h2 className="woocommerce-loop-product__title">
-                        <a href="single-product.html">Ricotta Salata</a>
-                      </h2>
-                      <span className="price">
-                        <span className="woocommerce-Price-amount amount">
-                          <span className="woocommerce-Price-currencySymbol">
-                            &#36;
-                          </span>
-                          15.99
-                        </span>{" "}
-                        &ndash;
-                        <span className="woocommerce-Price-amount amount">
-                          <span className="woocommerce-Price-currencySymbol">
-                            &#36;
-                          </span>
-                          68.99
-                        </span>
-                      </span>
-                      <a
-                        rel="nofollow"
-                        href="single-product.html"
-                        data-quantity="1"
-                        data-product_id="438"
-                        data-product_sku=""
-                        className="button add_to_cart_button"
-                      >
-                        Select options
-                      </a>
-                    </div>
-                  </div>
-                </li>
-                <li className="product has-post-thumbnail column-1_3 instock purchasable">
-                  <div className="post_item_wrap">
-                    <div className="post_featured">
-                      <div className="post_thumb">
-                        <a
-                          className="hover_icon hover_icon_link"
-                          href="single-product.html"
-                        >
-                          <img
-                            src="/assets/images/2000x2000.png"
-                            className="attachment-shop_catalog size-shop_catalog"
-                            alt=""
-                          />
-                        </a>
-                      </div>
-                    </div>
-                    <div className="post_content">
-                      <h2 className="woocommerce-loop-product__title">
-                        <a href="single-product.html">Fromage a Raclette</a>
-                      </h2>
-                      <span className="price">
-                        <span className="woocommerce-Price-amount amount">
-                          <span className="woocommerce-Price-currencySymbol">
-                            &#36;
-                          </span>
-                          31.50
-                        </span>{" "}
-                        &ndash;
-                        <span className="woocommerce-Price-amount amount">
-                          <span className="woocommerce-Price-currencySymbol">
-                            &#36;
-                          </span>
-                          99.90
-                        </span>
-                      </span>
-                      <a
-                        rel="nofollow"
-                        href="single-product.html"
-                        data-quantity="1"
-                        data-product_id="426"
-                        data-product_sku=""
-                        className="button add_to_cart_button"
-                      >
-                        Select options
-                      </a>
-                    </div>
-                  </div>
-                </li>
-                <li className="product has-post-thumbnail product_cat-yoghurt  column-1_3 last instock purchasable">
-                  <div className="post_item_wrap">
-                    <div className="post_featured">
-                      <div className="post_thumb">
-                        <a
-                          className="hover_icon hover_icon_link"
-                          href="single-product.html"
-                        >
-                          <img
-                            src="/assets/images/2000x2000.png"
-                            className="attachment-shop_catalog size-shop_catalog"
-                            alt=""
-                          />
-                        </a>
-                      </div>
-                    </div>
-                    <div className="post_content">
-                      <h2 className="woocommerce-loop-product__title">
-                        <a href="single-product.html">Parmesan Cheese</a>
-                      </h2>
-                      <span className="price">
-                        <span className="woocommerce-Price-amount amount">
-                          <span className="woocommerce-Price-currencySymbol">
-                            &#36;
-                          </span>
-                          18.00
-                        </span>{" "}
-                        &ndash;
-                        <span className="woocommerce-Price-amount amount">
-                          <span className="woocommerce-Price-currencySymbol">
-                            &#36;
-                          </span>
-                          82.00
-                        </span>
-                      </span>
-                      <a
-                        rel="nofollow"
-                        href="single-product.html"
-                        data-quantity="1"
-                        data-product_id="412"
-                        data-product_sku=""
-                        className="button add_to_cart_button"
-                      >
-                        Select options
-                      </a>
-                    </div>
-                  </div>
-                </li>
-                <li className="product has-post-thumbnail column-1_3 first instock purchasable">
-                  <div className="post_item_wrap">
-                    <div className="post_featured">
-                      <div className="post_thumb">
-                        <a
-                          className="hover_icon hover_icon_link"
-                          href="single-product.html"
-                        >
-                          <img
-                            src="/assets/images/2000x2000.png"
-                            className="attachment-shop_catalog size-shop_catalog"
-                            alt=""
-                          />
-                        </a>
-                      </div>
-                    </div>
-                    <div className="post_content">
-                      <h2 className="woocommerce-loop-product__title">
-                        <a href="single-product.html">Brie Cheese</a>
-                      </h2>
-                      <span className="price">
-                        <span className="woocommerce-Price-amount amount">
-                          <span className="woocommerce-Price-currencySymbol">
-                            &#36;
-                          </span>
-                          25.50
-                        </span>{" "}
-                        &ndash;
-                        <span className="woocommerce-Price-amount amount">
-                          <span className="woocommerce-Price-currencySymbol">
-                            &#36;
-                          </span>
-                          110.90
-                        </span>
-                      </span>
-                      <a
-                        rel="nofollow"
-                        href="single-product.html"
-                        data-quantity="1"
-                        data-product_id="402"
-                        data-product_sku=""
-                        className="button add_to_cart_button"
-                      >
-                        Select options
-                      </a>
-                    </div>
-                  </div>
-                </li>
-                <li className="product has-post-thumbnail column-1_3 instock purchasable">
-                  <div className="post_item_wrap">
-                    <div className="post_featured">
-                      <div className="post_thumb">
-                        <a
-                          className="hover_icon hover_icon_link"
-                          href="single-product.html"
-                        >
-                          <img
-                            src="/assets/images/2000x2000.png"
-                            className="attachment-shop_catalog size-shop_catalog"
-                            alt=""
-                          />
-                        </a>
-                      </div>
-                    </div>
-                    <div className="post_content">
-                      <h2 className="woocommerce-loop-product__title">
-                        <a href="single-product.html">Camembert Cheese</a>
-                      </h2>
-                      <span className="price">
-                        <span className="woocommerce-Price-amount amount">
-                          <span className="woocommerce-Price-currencySymbol">
-                            &#36;
-                          </span>
-                          46.99
-                        </span>{" "}
-                        &ndash;
-                        <span className="woocommerce-Price-amount amount">
-                          <span className="woocommerce-Price-currencySymbol">
-                            &#36;
-                          </span>
-                          135.99
-                        </span>
-                      </span>
-                      <a
-                        rel="nofollow"
-                        href="single-product.html"
-                        data-quantity="1"
-                        data-product_id="387"
-                        data-product_sku=""
-                        className="button add_to_cart_button"
-                      >
-                        Select options
-                      </a>
-                    </div>
-                  </div>
-                </li>
-                <li className="product has-post-thumbnail column-1_3 last instock purchasable">
-                  <div className="post_item_wrap">
-                    <div className="post_featured">
-                      <div className="post_thumb">
-                        <a
-                          className="hover_icon hover_icon_link"
-                          href="single-product.html"
-                        >
-                          <img
-                            src="/assets/images/2000x2000.png"
-                            className="attachment-shop_catalog size-shop_catalog"
-                            alt=""
-                          />
-                        </a>
-                      </div>
-                    </div>
-                    <div className="post_content">
-                      <h2 className="woocommerce-loop-product__title">
-                        <a href="single-product.html">Tested Raw Milk</a>
-                      </h2>
-                      <span className="price">
-                        <span className="woocommerce-Price-amount amount">
-                          <span className="woocommerce-Price-currencySymbol">
-                            &#36;
-                          </span>
-                          23.00
-                        </span>{" "}
-                        &ndash;
-                        <span className="woocommerce-Price-amount amount">
-                          <span className="woocommerce-Price-currencySymbol">
-                            &#36;
-                          </span>
-                          29.50
-                        </span>
-                      </span>
-                      <a
-                        rel="nofollow"
-                        href="single-product.html"
-                        data-quantity="1"
-                        data-product_id="364"
-                        data-product_sku=""
-                        className="button add_to_cart_button"
-                      >
-                        Select options
-                      </a>
-                    </div>
-                  </div>
-                </li>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

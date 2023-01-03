@@ -8,6 +8,7 @@ use App\Models\CategoryModel;
 
 class Products extends ResourceController
 {
+  private $upload_path = 'assets/images/products/';
 
   /**
    * Return an array of resource objects, themselves in array format
@@ -22,7 +23,7 @@ class Products extends ResourceController
     $data['categories'] = $model->findAll();
 
     $model = new ProductModel();
-    $data['products'] = $model->orderBy('product_creation_time', 'DESC')->findAll();
+    $data['products'] = $model->orderBy('created_at', 'DESC')->findAll();
 
     return view('products/products_list', $data);
   }
@@ -67,6 +68,8 @@ class Products extends ResourceController
       'product_name' => 'required|min_length[5]|max_length[25]',
       'product_details' => 'required|min_length[10]',
       'product_price' => 'required|numeric',
+      'product_stock' => 'required|numeric',
+      'product_status' => 'required',
       'product_category' => 'required',
       'product_image' => [
         // 'uploaded[product_image]',   // This is for required
@@ -88,6 +91,13 @@ class Products extends ResourceController
         'required' => 'Product price must be filled',
         'numeric' => 'Price must be numeric'
       ],
+      'product_status' => [
+        'required' => 'Must select status'
+      ],
+      'product_stock' => [
+        'required' => 'Product stock must be filled',
+        'numeric' => 'Stock must be numeric'
+      ],
       'product_category' => [
         'required' => 'Must select category'
       ],
@@ -105,7 +115,10 @@ class Products extends ResourceController
     } else {
       $img = $this->request->getFile('product_image');
       if ($img->getName() != '') {
-        $img->move('assets/images/products');
+        $img->move($this->upload_path);
+        $filename = $img->getName();
+      } else {
+        $filename = 'no_image.jpg';
       }
       // print_r($img);
       $model = new ProductModel();
@@ -116,7 +129,9 @@ class Products extends ResourceController
         'product_category' => $this->request->getPost('product_category'),
         'product_details' => $this->request->getPost('product_details'),
         'product_price' => $this->request->getPost('product_price'),
-        'product_image' => $img->getName(),
+        'product_stock' => $this->request->getPost('product_stock'),
+        'product_status' => $this->request->getPost('product_status'),
+        'product_image' => $filename,
       ];
 
       if ($model->save($data)) {
@@ -153,6 +168,8 @@ class Products extends ResourceController
       'product_name' => 'required|min_length[5]|max_length[25]',
       'product_details' => 'required|min_length[10]',
       'product_price' => 'required|numeric',
+      'product_stock' => 'required|numeric',
+      'product_status' => 'required',
       'product_category' => 'required',
       'product_image' => [
         // 'uploaded[product_image]',   // This is for required
@@ -173,6 +190,13 @@ class Products extends ResourceController
       'product_price' => [
         'required' => 'Product price must be filled',
         'numeric' => 'Price must be numeric'
+      ],
+      'product_status' => [
+        'required' => 'Must select status'
+      ],
+      'product_stock' => [
+        'required' => 'Product stock must be filled',
+        'numeric' => 'Stock must be numeric'
       ],
       'product_category' => [
         'required' => 'Must select category'
@@ -196,10 +220,10 @@ class Products extends ResourceController
       // photo uploading part
       $img = $this->request->getFile('product_image');
       if ($img->getName() != '') {
-        if ($img->move('assets/images/products')) {
+        if ($img->move($this->upload_path)) {
           // If file upload succeed then remove previus file and set new file name
-          if ($filename != "") {
-            unlink('assets/images/products/' . $filename);
+          if (trim($filename) != "" && trim($filename) != 'no_image.jpg') {
+            unlink($this->upload_path . $filename);
           }
           $filename = $img->getName();
         }
@@ -230,8 +254,15 @@ class Products extends ResourceController
   public function delete($id = null)
   {
     $model = new ProductModel();
+
+    $product_image = $model->find($id)['product_image'];
     if ($model->delete($id)) {
-      return redirect()->to(site_url('products'))->with('msg', 'Successfull Deleted');
+      // Delete product image
+      if (trim($product_image) != "" && trim($product_image) != 'no_image.jpg') {
+        unlink($this->upload_path . $product_image);
+      }
+
+      return redirect()->to(site_url('/products'))->with('msg', 'Successfull Deleted');
     }
   }
 }

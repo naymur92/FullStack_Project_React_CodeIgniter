@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE | Log in</title>
+  <title>DairyFarm | Log in</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -19,7 +19,7 @@
 <body class="hold-transition login-page">
   <div class="login-box">
     <div class="login-logo">
-      <a href="<?= base_url(); ?>"><b>Admin</b>LTE</a>
+      <a href="<?= base_url(); ?>"><b>DairyFarm</b>-Management</a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
@@ -69,6 +69,17 @@
             <!-- /.col -->
           </div>
         </form>
+
+        <?php if (session()->getFlashdata('role_err')) : ?>
+          <div class="alert alert-warning my-2">
+            <?= session()->getFlashdata('role_err') ?>
+          </div>
+        <?php endif; ?>
+        <?php if (session()->getFlashdata('status_err')) : ?>
+          <div class="alert alert-warning my-2">
+            <?= session()->getFlashdata('status_err') ?>
+          </div>
+        <?php endif; ?>
 
         <div class="social-auth-links text-center mb-3">
           <p>- OR -</p>

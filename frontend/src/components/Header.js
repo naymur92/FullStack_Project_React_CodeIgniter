@@ -29,7 +29,11 @@ function Header() {
                   </a>
                 </div>
               </div>
-              <div className="contact_field contact_cart">
+              <div className="contact_field contact_cart d-flex justify-content-between">
+                <a href="http://localhost:8080" className="text-warning mt-1">
+                  <i class="fa-solid fa-user fa-2x"></i>
+                </a>
+
                 <a
                   href="#"
                   className="top_panel_cart_button"

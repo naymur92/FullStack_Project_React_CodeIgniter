@@ -25,15 +25,24 @@ class SignIn extends BaseController
       $pass = $data['password'];
       $authenticatePassword = password_verify($password, $pass);
       if ($authenticatePassword) {
-        $ses_data = [
-          'id' => $data['id'],
-          'name' => $data['name'],
-          'email' => $data['email'],
-          'isLoggedIn' => TRUE
-        ];
-        $session->set($ses_data);
-        return redirect()->to(base_url());
-        // echo "login success";
+        if ($data['role'] != 'user') {
+          if ($data['status'] == 'active') {
+            $ses_data = [
+              'id' => $data['id'],
+              'name' => $data['name'],
+              'email' => $data['email'],
+              'role' => $data['role'],
+              'isLoggedIn' => TRUE
+            ];
+            $session->set($ses_data);
+            return redirect()->to(base_url());
+            // echo "login success";
+          } else {
+            return redirect()->back()->with('status_err', 'Only activated employees can logged in!.');
+          }
+        } else {
+          return redirect()->back()->with('role_err', 'Please login as a user.');
+        }
       } else {
         return redirect()->back()->withInput()->with('pass_err', 'Password is incorrect.');
       }

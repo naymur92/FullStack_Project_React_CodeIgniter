@@ -84,13 +84,41 @@ if ($session->has('errors')) {
                     <div class="alert alert-warning my-2"><?= $errors['product_details']; ?></div>
                   <?php endif; ?>
                 </div>
-                <div class="form-group">
-                  <label for="_pprice"><strong>Product Price:</strong></label>
-                  <input type="number" id="_pprice" name="product_price" value="<?= old('product_price'); ?>" placeholder="Enter Product Price" class="form-control">
-                  <?php if (isset($errors['product_price'])) : ?>
-                    <div class="alert alert-warning my-2"><?= $errors['product_price']; ?></div>
-                  <?php endif; ?>
+                <div class="row">
+                  <div class="col-4">
+                    <div class="form-group">
+                      <label for="_pprice"><strong>Product Price:</strong></label>
+                      <input type="number" id="_pprice" name="product_price" value="<?= old('product_price'); ?>" placeholder="Enter Product Price" class="form-control">
+                      <?php if (isset($errors['product_price'])) : ?>
+                        <div class="alert alert-warning my-2"><?= $errors['product_price']; ?></div>
+                      <?php endif; ?>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="form-group">
+                      <label for="_pstock"><strong>Product Stock:</strong></label>
+                      <input type="number" id="_pstock" name="product_stock" value="<?= old('product_stock'); ?>" placeholder="Enter Product Stock" class="form-control">
+                      <?php if (isset($errors['product_stock'])) : ?>
+                        <div class="alert alert-warning my-2"><?= $errors['product_stock']; ?></div>
+                      <?php endif; ?>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="form-group">
+                      <label for="_pstatus"><strong>Product Status:</strong></label>
+                      <select name="product_status" id="_pstatus" class="form-control">
+                        <option value="" selected>Select One</option>
+                        <option value="available" <?= old('product_status') == 'available' ? 'selected' : '' ?>>Available</option>
+                        <option value="upcoming" <?= old('product_status') == 'upcoming' ? 'selected' : '' ?>>Upcoming</option>
+                        <option value="unavailable" <?= old('product_status') == 'unavailable' ? 'selected' : '' ?>>Unavailable</option>
+                      </select>
+                      <?php if (isset($errors['product_status'])) : ?>
+                        <div class="alert alert-warning my-2"><?= $errors['product_status']; ?></div>
+                      <?php endif; ?>
+                    </div>
+                  </div>
                 </div>
+
               </div>
               <div class="card-footer">
                 <input type="submit" value="Add Product" class="btn btn-success">

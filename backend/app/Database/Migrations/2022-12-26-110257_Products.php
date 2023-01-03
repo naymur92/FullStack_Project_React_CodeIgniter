@@ -27,7 +27,7 @@ class Products extends Migration
       ],
       'product_details' => [
         'type' => 'VARCHAR',
-        'constraint' => 500,
+        'constraint' => 3000,
         'null' => true
       ],
       'product_price' => [
@@ -35,12 +35,21 @@ class Products extends Migration
         'constraint' => 10, 2,
         'null' => false
       ],
+      'product_stock' => [
+        'type' => 'MEDIUMINT',
+        'constraint' => 8,
+      ],
+      'product_status' => [
+        'type' => 'VARCHAR',
+        'constraint' => 15,
+        'default' => 'available'
+      ],
       'product_image' => [
         'type' => 'VARCHAR',
         'constraint' => 50,
         'null' => true
       ],
-      'product_creation_time' => [
+      'created_at' => [
         'type' => 'DATETIME',
         'default' => new RawSql('CURRENT_TIMESTAMP')
       ]

@@ -37,7 +37,6 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->group('', ['filter' => 'authGuard'], static function ($routes) {
     $routes->get('/', 'Dashboard::index');
-    // $routes->get('products/delete/(:any)', 'Products::delete/$1');
     $routes->presenter('products');
 
     $routes->get('logout', 'SignIn::logOut');
