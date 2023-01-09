@@ -28,10 +28,10 @@ class Categories extends ResourceController
    *
    * @return mixed
    */
-  public function show($id = null)
-  {
-    //
-  }
+  // public function show($id = null)
+  // {
+  //   //
+  // }
 
   /**
    * Return a new resource object, with default properties

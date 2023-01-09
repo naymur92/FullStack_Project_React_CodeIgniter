@@ -27,6 +27,7 @@
         <p class="login-box-msg">Sign in to start your session</p>
 
         <form action="<?= base_url('signin/auth') ?>" method="post">
+          <?= csrf_field(); ?>
           <div class="input-group mb-3">
             <input type="email" class="form-control" name="email" value="<?= old('email') ?>" placeholder="Email">
             <div class="input-group-append">

@@ -76,8 +76,9 @@
                       </td>
                       <td><?= date("d M, Y - h:i A", strtotime($category['created_at'])); ?></td>
                       <td><?= $category['updated_at'] == 0 ? '' : date("d M, Y - h:i A", strtotime($category['updated_at'])); ?></td>
-                      <td>
-                        <a href="<?= site_url('categories/show/' . $category['cat_id']); ?>" class="mx-2"><i class="fa fa-eye text-primary"></i></a>
+                      <td class="d-flex justify-content-center">
+                        <!-- <a href="<?php // echo site_url('categories/show/' . $category['cat_id']); 
+                                      ?>" class="mx-2"><i class="fa fa-eye text-primary"></i></a> -->
                         <a href="<?= site_url('categories/edit/' . $category['cat_id']); ?>" class="mx-2"><i class="fa fa-pen text-success"></i></a>
                         <a href="<?= base_url('categories/delete/' . $category['cat_id']); ?>" class="mx-2 delete" onclick="confirm('Are you sure want to delete?')"><i class="fa fa-trash text-danger"></i></a>
                       </td>

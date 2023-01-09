@@ -88,7 +88,7 @@
                         <img src="/assets/images/products/<?= $product['product_image']; ?>" class="img-thumbnail" width="100px" alt="">
                       </td>
                       <td><?= date("d M, Y - h:i A", strtotime($product['created_at'])); ?></td>
-                      <td>
+                      <td class="d-flex justify-content-center">
                         <a href="<?= site_url('products/show/' . $product['id']); ?>" class="mx-2"><i class="fa fa-eye text-primary"></i></a>
                         <a href="<?= site_url('products/edit/' . $product['id']); ?>" class="mx-2"><i class="fa fa-pen text-success"></i></a>
                         <a href="<?= base_url('products/delete/' . $product['id']); ?>" class="mx-2 delete" onclick="confirm('Are you sure want to delete?')"><i class="fa fa-trash text-danger"></i></a>

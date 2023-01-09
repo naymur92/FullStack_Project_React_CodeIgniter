@@ -33,6 +33,7 @@ if ($session->has('errors')) {
         <p class="login-box-msg">Register a new membership</p>
 
         <form action="<?= base_url('signup/store'); ?>" method="post">
+          <?= csrf_field(); ?>
           <div class="input-group mb-1 mt-3">
             <input type="text" name="name" value="<?= old('name'); ?>" class="form-control" placeholder="Full name">
             <div class="input-group-append">
