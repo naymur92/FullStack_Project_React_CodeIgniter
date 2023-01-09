@@ -3,6 +3,7 @@
 namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
+use CodeIgniter\Database\RawSql;
 
 class Categories extends Migration
 {
@@ -19,7 +20,23 @@ class Categories extends Migration
         'type' => 'VARCHAR',
         'constraint' => 20,
         'null' => false
-      ]
+      ],
+      'category_desc' => [
+        'type' => 'VARCHAR',
+        'constraint' => 1500,
+        'null' => false
+      ],
+      'category_image' => [
+        'type' => 'VARCHAR',
+        'constraint' => 20,
+      ],
+      'created_at' => [
+        'type' => 'DATETIME',
+        'default' => new RawSql('CURRENT_TIMESTAMP')
+      ],
+      'updated_at' => [
+        'type' => 'DATETIME',
+      ],
     ]);
     $this->forge->addKey('cat_id', true);
     $this->forge->createTable('categories');

@@ -573,7 +573,7 @@ function Home() {
                         >
                           <div className="sc_section_inner">
                             <h2 className="sc_section_title sc_item_title sc_item_title_without_descr">
-                              Products<span></span>
+                              Product Categories<span></span>
                             </h2>
                             <div className="sc_section_content_wrap">
                               <div className="columns_wrap sc_columns columns_nofluid sc_columns_count_4">

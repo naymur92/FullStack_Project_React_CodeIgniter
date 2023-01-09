@@ -41,6 +41,7 @@ if ($session->has('errors')) {
               <h1 class="text-center text-light">Product Entry Form</h1>
             </div>
             <form action="<?= base_url('products/create') ?>" method="POST" enctype="multipart/form-data">
+              <?= csrf_field(); ?>
               <div class="card-body">
                 <div class="form-group">
                   <label for="_pname"><strong>Product Name:</strong></label>
@@ -121,7 +122,7 @@ if ($session->has('errors')) {
 
               </div>
               <div class="card-footer">
-                <input type="submit" value="Add Product" class="btn btn-success">
+                <input type="submit" value="Add Product" class="btn btn-success  float-right">
               </div>
             </form>
           </div>

@@ -42,6 +42,7 @@ if ($session->has('errors')) {
               <h1 class="text-center text-light">Product Edit Form</h1>
             </div>
             <form action="/products/update/<?= $product['id']; ?>" method="POST" enctype="multipart/form-data">
+              <?= csrf_field(); ?>
               <div class="card-body">
                 <div class="form-group">
                   <label for="_pname"><strong>Product Name:</strong></label>

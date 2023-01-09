@@ -4,7 +4,18 @@
 
 <?php if (session()->has('msg')) : ?>
   <script>
-    alert('<?= session()->msg; ?>');
+    function tempAlert(msg, duration) {
+      var el = document.createElement("div");
+      el.setAttribute('class', 'alert alert-success text-white');
+      el.setAttribute("style", "position:absolute;top:20%;left:50%;");
+      el.innerHTML = msg;
+      setTimeout(function() {
+        el.parentNode.removeChild(el);
+      }, duration);
+      document.body.appendChild(el);
+    }
+
+    tempAlert('<?= session()->msg; ?>', 5000);
   </script>
 <?php endif; ?>
 
@@ -80,7 +91,7 @@
                       <td>
                         <a href="<?= site_url('products/show/' . $product['id']); ?>" class="mx-2"><i class="fa fa-eye text-primary"></i></a>
                         <a href="<?= site_url('products/edit/' . $product['id']); ?>" class="mx-2"><i class="fa fa-pen text-success"></i></a>
-                        <a href="<?= base_url('products/delete/' . $product['id']); ?>" class="mx-2 delete"><i class="fa fa-trash text-danger"></i></a>
+                        <a href="<?= base_url('products/delete/' . $product['id']); ?>" class="mx-2 delete" onclick="confirm('Are you sure want to delete?')"><i class="fa fa-trash text-danger"></i></a>
                       </td>
                     </tr>
                   <?php
@@ -119,11 +130,23 @@
 
 <script>
   $(function() {
+    var csrfName = '<?= csrf_token(); ?>',
+      csrfHash = '<?= csrf_hash(); ?>';
+
     $(".delete").click(function(e) {
       e.preventDefault();
-      $.post(this.href, function() {
-        alert('Successfully Deleted');
-        location.reload();
+      var link = this.href;
+      var dataJson = {
+        [csrfName]: csrfHash
+      };
+
+      $.ajax({
+        url: link,
+        type: 'post',
+        data: dataJson,
+        success: function() {
+          location.reload();
+        }
       });
     });
   });

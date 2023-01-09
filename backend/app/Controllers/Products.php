@@ -135,7 +135,7 @@ class Products extends ResourceController
       ];
 
       if ($model->save($data)) {
-        return redirect()->to(site_url('/products'))->with('msg', 'Successfull Inserted');
+        return redirect()->to(site_url('/products'))->with('msg', 'Successfully Inserted');
       }
     }
   }
@@ -262,7 +262,8 @@ class Products extends ResourceController
         unlink($this->upload_path . $product_image);
       }
 
-      return redirect()->to(site_url('/products'))->with('msg', 'Successfull Deleted');
+      session()->setFlashdata('msg', 'Successfully Deleted');
+      // return redirect()->to(site_url('/products'))->with('msg', 'Successfull Deleted');
     }
   }
 }
