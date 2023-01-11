@@ -22,7 +22,7 @@ function Shop() {
           <div className="content_wrap">
             <h1 className="page_title">Shop</h1>
             <div className="breadcrumbs">
-              <a className="breadcrumbs_item home" href="index.html">
+              <a className="breadcrumbs_item home" href="/">
                 Home
               </a>
               <span className="breadcrumbs_delimiter" />

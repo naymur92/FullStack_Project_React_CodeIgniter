@@ -1,4 +1,5 @@
 import React from 'react';
+import { API_PATH } from '../API_PATH';
 import HeaderMenuItems from './HeaderMenuItems';
 
 function Header() {
@@ -10,7 +11,7 @@ function Header() {
             <div className="content_wrap">
               <div className="contact_logo">
                 <div className="logo">
-                  <a href="index.html">
+                  <a href="/">
                     <img
                       src="/assets/images/logo.png"
                       className="logo_main"
@@ -29,7 +30,7 @@ function Header() {
                 </div>
               </div>
               <div className="contact_field contact_cart d-flex justify-content-between">
-                <a href="http://localhost:8080" className="text-warning mt-1">
+                <a href={`${API_PATH}`} className="text-warning mt-1">
                   <i className="fa-solid fa-user fa-2x" />
                 </a>
 

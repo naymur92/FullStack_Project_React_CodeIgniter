@@ -45,6 +45,7 @@ $routes->group('', ['filter' => 'authGuard'], static function ($routes) {
 
 
 $routes->get('prodlists', 'FrontProducts::index');
+$routes->get('catlists', 'FrontCategories::index');
 
 $routes->get('qb', 'Qb::index');
 $routes->get('qb/query', 'Qb::query');
