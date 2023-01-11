@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 function Footer() {
   return (
@@ -8,13 +8,9 @@ function Footer() {
           <div className="content_wrap">
             <h2 className="call-title">Where to Buy</h2>
             <div className="call-text">
-              Our Products are currently available at select retailers in
-              Connecticut and New York..
+              Our Products are currently available at select retailers in Connecticut and New York..
             </div>
-            <a
-              className="sc_button sc_button_size_large sc_button_style_border"
-              href="#"
-            >
+            <a className="sc_button sc_button_size_large sc_button_style_border" href="#">
               Store Locator
             </a>
           </div>
@@ -140,45 +136,29 @@ function Footer() {
                 </div>
               </aside>
               <aside className="column-1_4 widget widget_text">
-                <div className="textwidget"></div>
+                <div className="textwidget" />
               </aside>
               <aside className="column-1_4 widget widget_socials">
                 <div className="widget_inner">
                   <div className="sc_socials sc_socials_type_icons sc_socials_shape_round sc_socials_size_tiny">
                     <div className="sc_socials_item">
-                      <a
-                        href="#"
-                        target="_blank"
-                        className="social_icons social_twitter"
-                      >
-                        <span className="icon-twitter"></span>
+                      <a href="#" target="_blank" className="social_icons social_twitter">
+                        <span className="icon-twitter" />
                       </a>
                     </div>
                     <div className="sc_socials_item">
-                      <a
-                        href="#"
-                        target="_blank"
-                        className="social_icons social_facebook"
-                      >
-                        <span className="icon-facebook"></span>
+                      <a href="#" target="_blank" className="social_icons social_facebook">
+                        <span className="icon-facebook" />
                       </a>
                     </div>
                     <div className="sc_socials_item">
-                      <a
-                        href="#"
-                        target="_blank"
-                        className="social_icons social_gplus-1"
-                      >
-                        <span className="icon-gplus-1"></span>
+                      <a href="#" target="_blank" className="social_icons social_gplus-1">
+                        <span className="icon-gplus-1" />
                       </a>
                     </div>
                     <div className="sc_socials_item">
-                      <a
-                        href="#"
-                        target="_blank"
-                        className="social_icons social_linkedin"
-                      >
-                        <span className="icon-linkedin"></span>
+                      <a href="#" target="_blank" className="social_icons social_linkedin">
+                        <span className="icon-linkedin" />
                       </a>
                     </div>
                   </div>

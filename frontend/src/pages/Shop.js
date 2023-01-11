@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { API_PATH } from "../API_PATH";
-import axios from "axios";
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { API_PATH } from '../API_PATH';
 
 function Shop() {
   const [products, setProducts] = useState([]);
@@ -25,7 +25,7 @@ function Shop() {
               <a className="breadcrumbs_item home" href="index.html">
                 Home
               </a>
-              <span className="breadcrumbs_delimiter"></span>
+              <span className="breadcrumbs_delimiter" />
               <span className="breadcrumbs_item current">Shop</span>
             </div>
           </div>
@@ -38,19 +38,19 @@ function Shop() {
               <nav className="woocommerce-breadcrumb">
                 <a href="index.html">Home</a>&nbsp;&#47;&nbsp;Shop
               </nav>
-              <header className="woocommerce-products-header"></header>
+              <header className="woocommerce-products-header" />
               <div className="mode_buttons">
                 <form action="#" method="post">
                   <a
                     href="shop.html"
                     className="woocommerce_thumbs icon-th"
                     title="Show products as thumbs"
-                  ></a>
+                  />
                   <a
                     href="shop-list.html"
                     className="woocommerce_list icon-th-list"
                     title="Show products as list"
-                  ></a>
+                  />
                 </form>
               </div>
               <p className="woocommerce-result-count">Showing all 9 results</p>
@@ -75,10 +75,7 @@ function Shop() {
                     <div className="post_item_wrap">
                       <div className="post_featured">
                         <div className="post_thumb">
-                          <a
-                            className="hover_icon hover_icon_link"
-                            href="single-product.html"
-                          >
+                          <a className="hover_icon hover_icon_link" href="single-product.html">
                             <img
                               src={`${API_PATH}/assets/images/products/${product.product_image}`}
                               className="attachment-shop_catalog size-shop_catalog"
@@ -89,15 +86,11 @@ function Shop() {
                       </div>
                       <div className="post_content">
                         <h2 className="woocommerce-loop-product__title">
-                          <a href="single-product.html">
-                            {product.product_name}
-                          </a>
+                          <a href="single-product.html">{product.product_name}</a>
                         </h2>
                         <span className="price">
                           <span className="woocommerce-Price-amount amount">
-                            <span className="woocommerce-Price-currencySymbol">
-                              &#2547;{" "}
-                            </span>
+                            <span className="woocommerce-Price-currencySymbol">&#2547; </span>
                             {Number(product.product_price).toFixed(2)}
                           </span>
                         </span>
@@ -118,10 +111,7 @@ function Shop() {
               </ul>
             </div>
           </div>
-          <div
-            className="sidebar widget_area scheme_light"
-            role="complementary"
-          >
+          <div className="sidebar widget_area scheme_light" role="complementary">
             <div className="sidebar_inner widget_area_inner">
               <aside
                 id="woocommerce_widget_cart-2"
@@ -129,9 +119,7 @@ function Shop() {
               >
                 <h4 className="widget_title">Your Cart</h4>
                 <div className="widget_shopping_cart_content">
-                  <p className="woocommerce-mini-cart__empty-message">
-                    No products in the cart.
-                  </p>
+                  <p className="woocommerce-mini-cart__empty-message">No products in the cart.</p>
                 </div>
               </aside>
               <aside
@@ -141,7 +129,7 @@ function Shop() {
                 <h4 className="widget_title">Price Filter</h4>
                 <form method="get" action="shop.html">
                   <div className="price_slider_wrapper">
-                    <div className="price_slider"></div>
+                    <div className="price_slider" />
                     <div className="price_slider_amount">
                       <input
                         type="text"
@@ -164,11 +152,11 @@ function Shop() {
                       </button>
                       <div className="price_label">
                         Price:
-                        <span className="from"></span> &mdash;
-                        <span className="to"></span>
+                        <span className="from" /> &mdash;
+                        <span className="to" />
                       </div>
                       <input type="hidden" name="q" value="shop.html" />
-                      <div className="clear"></div>
+                      <div className="clear" />
                     </div>
                   </div>
                 </form>

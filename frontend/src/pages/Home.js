@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Slider from "../components/HomeComponents/Slider";
-import Products from "../components/HomeComponents/Products";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Products from '../components/HomeComponents/Products';
+import Slider from '../components/HomeComponents/Slider';
 
 function Home() {
   return (
@@ -26,23 +26,23 @@ function Home() {
                         >
                           <div className="sc_section_inner">
                             <h2 className="sc_section_title sc_item_title sc_item_title_without_descr">
-                              Welcome To Our Farm!<span></span>
+                              Welcome To Our Farm!
+                              <span />
                             </h2>
                             <div className="sc_section_content_wrap">
                               <div className="sc_section sc_section_block margin_bottom_large aligncenter mw800">
                                 <div className="sc_section_inner">
                                   <div className="sc_section_content_wrap">
                                     <span className="sc_highlight fst_1">
-                                      Here you will find a wide range of healthy
-                                      and fresh dairy products that were proudly
-                                      produced at our farm by our farmers and
-                                      cows. Welcome to Jacksons!
+                                      Here you will find a wide range of healthy and fresh dairy
+                                      products that were proudly produced at our farm by our farmers
+                                      and cows. Welcome to Jacksons!
                                     </span>
                                   </div>
                                 </div>
                               </div>
                               <div className="vc_empty_space h_6r">
-                                <span className="vc_empty_space_inner"></span>
+                                <span className="vc_empty_space_inner" />
                               </div>
                             </div>
                           </div>
@@ -51,7 +51,7 @@ function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="vc_row-full-width"></div>
+                <div className="vc_row-full-width" />
                 <div className="vc_row wpb_row vc_row-fluid">
                   <div className="wpb_column vc_column_container vc_col-sm-12">
                     <div className="vc_column-inner ">
@@ -76,10 +76,7 @@ function Home() {
                   <div className="wpb_column vc_column_container vc_col-sm-12">
                     <div className="vc_column-inner vc_custom_1475066123130">
                       <div className="wpb_wrapper">
-                        <div
-                          id="sc_services_918_wrap"
-                          className="sc_services_wrap"
-                        >
+                        <div id="sc_services_918_wrap" className="sc_services_wrap">
                           <div
                             id="sc_services_918"
                             className="sc_services sc_services_style_services-1 sc_services_type_images  margin_top_large margin_bottom_large fwidth"
@@ -97,14 +94,8 @@ function Home() {
                                       data-image=""
                                       data-title="Our Dairy Farm"
                                     >
-                                      <Link
-                                        className="hover_icon hover_icon_link"
-                                        to="/about"
-                                      >
-                                        <img
-                                          alt=""
-                                          src="/assets/images/service3-370x300.jpg"
-                                        />
+                                      <Link className="hover_icon hover_icon_link" to="/about">
+                                        <img alt="" src="/assets/images/service3-370x300.jpg" />
                                       </Link>
                                     </div>
                                   </div>
@@ -116,20 +107,18 @@ function Home() {
                                       <div className="wpb_text_column wpb_content_element ">
                                         <div className="wpb_wrapper">
                                           <p>
-                                            Lorem ipsum dolor sit amet,
-                                            consectetuer adipiscing elit.
-                                            Praesent vestibulum molestie lacus.
-                                            Aenean nonummy hendrerit mauris.
-                                            Phasellus porta.
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                                            elit. Praesent vestibulum molestie lacus. Aenean nonummy
+                                            hendrerit mauris. Phasellus porta.
                                           </p>
                                         </div>
                                       </div>
-                                      <a
-                                        href="about-2.html"
+                                      <Link
+                                        to="/about"
                                         className="sc_button sc_button_square sc_button_style_filled sc_button_size_small"
                                       >
                                         discover history
-                                      </a>
+                                      </Link>
                                     </div>
                                   </div>
                                 </div>
@@ -145,14 +134,8 @@ function Home() {
                                       data-image=""
                                       data-title="Meet Our Cows"
                                     >
-                                      <a
-                                        className="hover_icon hover_icon_link"
-                                        href="farm.html"
-                                      >
-                                        <img
-                                          alt=""
-                                          src="/assets/images/service2-370x300.jpg"
-                                        />
+                                      <a className="hover_icon hover_icon_link" href="farm.html">
+                                        <img alt="" src="/assets/images/service2-370x300.jpg" />
                                       </a>
                                     </div>
                                   </div>
@@ -164,11 +147,9 @@ function Home() {
                                       <div className="wpb_text_column wpb_content_element ">
                                         <div className="wpb_wrapper">
                                           <p>
-                                            Lorem ipsum dolor sit amet,
-                                            consectetuer adipiscing elit.
-                                            Praesent vestibulum molestie lacus.
-                                            Aenean nonummy hendrerit mauris.
-                                            Phasellus porta.
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                                            elit. Praesent vestibulum molestie lacus. Aenean nonummy
+                                            hendrerit mauris. Phasellus porta.
                                           </p>
                                         </div>
                                       </div>
@@ -193,14 +174,8 @@ function Home() {
                                       data-image=""
                                       data-title="Our Organic Food"
                                     >
-                                      <a
-                                        className="hover_icon hover_icon_link"
-                                        href="shop.html"
-                                      >
-                                        <img
-                                          alt=""
-                                          src="/assets/images/service1-370x300.jpg"
-                                        />
+                                      <a className="hover_icon hover_icon_link" href="shop.html">
+                                        <img alt="" src="/assets/images/service1-370x300.jpg" />
                                       </a>
                                     </div>
                                   </div>
@@ -212,11 +187,9 @@ function Home() {
                                       <div className="wpb_text_column wpb_content_element ">
                                         <div className="wpb_wrapper">
                                           <p>
-                                            Lorem ipsum dolor sit amet,
-                                            consectetuer adipiscing elit.
-                                            Praesent vestibulum molestie lacus.
-                                            Aenean nonummy hendrerit mauris.
-                                            Phasellus porta.
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                                            elit. Praesent vestibulum molestie lacus. Aenean nonummy
+                                            hendrerit mauris. Phasellus porta.
                                           </p>
                                         </div>
                                       </div>
@@ -253,13 +226,14 @@ function Home() {
                             <div className="sc_section_content_wrap">
                               <div
                                 className="sc_section margin_bottom_tiny- alignleft"
-                                style={{ width: "100%" }}
+                                style={{ width: '100%' }}
                               >
                                 <div className="sc_section_inner">
                                   <h2 className="sc_section_title sc_item_title sc_item_title_without_descr">
-                                    What's Fresh<span></span>
+                                    What&apos;s Fresh
+                                    <span />
                                   </h2>
-                                  <div className="sc_section_content_wrap"></div>
+                                  <div className="sc_section_content_wrap" />
                                 </div>
                               </div>
                               <div className="sc_section margin_bottom_huge section_style_call_section">
@@ -270,13 +244,11 @@ function Home() {
                                     to Yours
                                   </h2>
                                   <div className="sc_section_descr sc_item_descr">
-                                    Although any mammal can produce milk,
-                                    commercial dairy farms are typically
-                                    one-species enterprises. In developed
-                                    countries, dairy farms typically consist of
-                                    high producing dairy cows. Other species
-                                    used in commercial dairy farming include
-                                    goats, sheep, and camels. Donkeys in Italy.
+                                    Although any mammal can produce milk, commercial dairy farms are
+                                    typically one-species enterprises. In developed countries, dairy
+                                    farms typically consist of high producing dairy cows. Other
+                                    species used in commercial dairy farming include goats, sheep,
+                                    and camels. Donkeys in Italy.
                                   </div>
                                   <div className="sc_section_content_wrap">
                                     <a
@@ -308,11 +280,11 @@ function Home() {
                   </div>
                   <div className="wpb_column vc_column_container vc_col-sm-1">
                     <div className="vc_column-inner ">
-                      <div className="wpb_wrapper"></div>
+                      <div className="wpb_wrapper" />
                     </div>
                   </div>
                 </div>
-                <div className="vc_row-full-width"></div>
+                <div className="vc_row-full-width" />
                 <div className="vc_row wpb_row vc_row-fluid">
                   <div className="wpb_column vc_column_container vc_col-sm-12">
                     <div className="vc_column-inner ">
@@ -323,12 +295,13 @@ function Home() {
                         >
                           <div className="sc_section_inner">
                             <h2 className="sc_section_title sc_item_title sc_item_title_without_descr">
-                              About Us<span></span>
+                              About Us
+                              <span />
                             </h2>
                             <div className="sc_section_content_wrap">
                               <div className="sc_promo sc_promo_size_large">
                                 <div className="sc_promo_inner">
-                                  <div className="sc_promo_image"></div>
+                                  <div className="sc_promo_image" />
                                   <div className="sc_promo_block sc_align_left">
                                     <div className="sc_promo_block_inner">
                                       <div className="sc_promo_content">
@@ -397,17 +370,12 @@ function Home() {
                                                   <div className="wpb_text_column wpb_content_element ">
                                                     <div className="wpb_wrapper">
                                                       <p>
-                                                        Lorem ipsum dolor sit
-                                                        amet, consectetuer
-                                                        adipiscing elit.
-                                                        Praesent vestibulum
-                                                        molestie lacus. Aenean
-                                                        nonummy hendrerit
-                                                        mauris. Phasellus porta.
-                                                        Fusce suscipit varius
-                                                        mi. Cum sociis natoque
-                                                        penatibus et magnis dis
-                                                        parturient montes.
+                                                        Lorem ipsum dolor sit amet, consectetuer
+                                                        adipiscing elit. Praesent vestibulum
+                                                        molestie lacus. Aenean nonummy hendrerit
+                                                        mauris. Phasellus porta. Fusce suscipit
+                                                        varius mi. Cum sociis natoque penatibus et
+                                                        magnis dis parturient montes.
                                                       </p>
                                                     </div>
                                                   </div>
@@ -428,17 +396,12 @@ function Home() {
                                                   <div className="wpb_text_column wpb_content_element ">
                                                     <div className="wpb_wrapper">
                                                       <p>
-                                                        Lorem ipsum dolor sit
-                                                        amet, consectetuer
-                                                        adipiscing elit.
-                                                        Praesent vestibulum
-                                                        molestie lacus. Aenean
-                                                        nonummy hendrerit
-                                                        mauris. Phasellus porta.
-                                                        Fusce suscipit varius
-                                                        mi. Cum sociis natoque
-                                                        penatibus et magnis dis
-                                                        parturient montes.
+                                                        Lorem ipsum dolor sit amet, consectetuer
+                                                        adipiscing elit. Praesent vestibulum
+                                                        molestie lacus. Aenean nonummy hendrerit
+                                                        mauris. Phasellus porta. Fusce suscipit
+                                                        varius mi. Cum sociis natoque penatibus et
+                                                        magnis dis parturient montes.
                                                       </p>
                                                     </div>
                                                   </div>
@@ -446,10 +409,7 @@ function Home() {
                                               </div>
                                             </div>
                                           </div>
-                                          <div
-                                            id="sc_tab_473_0"
-                                            className="sc_tabs_content odd"
-                                          >
+                                          <div id="sc_tab_473_0" className="sc_tabs_content odd">
                                             <div className="sc_section aligncenter">
                                               <div className="sc_section_inner">
                                                 <div className="sc_section_content_wrap">
@@ -459,17 +419,12 @@ function Home() {
                                                   <div className="wpb_text_column wpb_content_element ">
                                                     <div className="wpb_wrapper">
                                                       <p>
-                                                        Lorem ipsum dolor sit
-                                                        amet, consectetuer
-                                                        adipiscing elit.
-                                                        Praesent vestibulum
-                                                        molestie lacus. Aenean
-                                                        nonummy hendrerit
-                                                        mauris. Phasellus porta.
-                                                        Fusce suscipit varius
-                                                        mi. Cum sociis natoque
-                                                        penatibus et magnis dis
-                                                        parturient montes.
+                                                        Lorem ipsum dolor sit amet, consectetuer
+                                                        adipiscing elit. Praesent vestibulum
+                                                        molestie lacus. Aenean nonummy hendrerit
+                                                        mauris. Phasellus porta. Fusce suscipit
+                                                        varius mi. Cum sociis natoque penatibus et
+                                                        magnis dis parturient montes.
                                                       </p>
                                                     </div>
                                                   </div>
@@ -477,10 +432,7 @@ function Home() {
                                               </div>
                                             </div>
                                           </div>
-                                          <div
-                                            id="sc_tab_649_10"
-                                            className="sc_tabs_content even"
-                                          >
+                                          <div id="sc_tab_649_10" className="sc_tabs_content even">
                                             <div className="sc_section aligncenter">
                                               <div className="sc_section_inner">
                                                 <div className="sc_section_content_wrap">
@@ -490,17 +442,12 @@ function Home() {
                                                   <div className="wpb_text_column wpb_content_element ">
                                                     <div className="wpb_wrapper">
                                                       <p>
-                                                        Lorem ipsum dolor sit
-                                                        amet, consectetuer
-                                                        adipiscing elit.
-                                                        Praesent vestibulum
-                                                        molestie lacus. Aenean
-                                                        nonummy hendrerit
-                                                        mauris. Phasellus porta.
-                                                        Fusce suscipit varius
-                                                        mi. Cum sociis natoque
-                                                        penatibus et magnis dis
-                                                        parturient montes.
+                                                        Lorem ipsum dolor sit amet, consectetuer
+                                                        adipiscing elit. Praesent vestibulum
+                                                        molestie lacus. Aenean nonummy hendrerit
+                                                        mauris. Phasellus porta. Fusce suscipit
+                                                        varius mi. Cum sociis natoque penatibus et
+                                                        magnis dis parturient montes.
                                                       </p>
                                                     </div>
                                                   </div>
@@ -508,10 +455,7 @@ function Home() {
                                               </div>
                                             </div>
                                           </div>
-                                          <div
-                                            id="sc_tab_625_4"
-                                            className="sc_tabs_content odd"
-                                          >
+                                          <div id="sc_tab_625_4" className="sc_tabs_content odd">
                                             <div className="sc_section aligncenter">
                                               <div className="sc_section_inner">
                                                 <div className="sc_section_content_wrap">
@@ -521,17 +465,12 @@ function Home() {
                                                   <div className="wpb_text_column wpb_content_element ">
                                                     <div className="wpb_wrapper">
                                                       <p>
-                                                        Lorem ipsum dolor sit
-                                                        amet, consectetuer
-                                                        adipiscing elit.
-                                                        Praesent vestibulum
-                                                        molestie lacus. Aenean
-                                                        nonummy hendrerit
-                                                        mauris. Phasellus porta.
-                                                        Fusce suscipit varius
-                                                        mi. Cum sociis natoque
-                                                        penatibus et magnis dis
-                                                        parturient montes.
+                                                        Lorem ipsum dolor sit amet, consectetuer
+                                                        adipiscing elit. Praesent vestibulum
+                                                        molestie lacus. Aenean nonummy hendrerit
+                                                        mauris. Phasellus porta. Fusce suscipit
+                                                        varius mi. Cum sociis natoque penatibus et
+                                                        magnis dis parturient montes.
                                                       </p>
                                                     </div>
                                                   </div>
@@ -541,7 +480,7 @@ function Home() {
                                           </div>
                                         </div>
                                         <div className="vc_empty_space h_11r">
-                                          <span className="vc_empty_space_inner"></span>
+                                          <span className="vc_empty_space_inner" />
                                         </div>
                                         <a
                                           href="#"
@@ -573,16 +512,14 @@ function Home() {
                         >
                           <div className="sc_section_inner">
                             <h2 className="sc_section_title sc_item_title sc_item_title_without_descr">
-                              Product Categories<span></span>
+                              Product Categories
+                              <span />
                             </h2>
                             <div className="sc_section_content_wrap">
                               <div className="columns_wrap sc_columns columns_nofluid sc_columns_count_4">
                                 <div className="column-1_4 sc_column_item sc_column_item_1 odd first">
                                   <figure className="sc_image  sc_image_shape_round">
-                                    <img
-                                      src="/assets/images/img_milk.jpg"
-                                      alt=""
-                                    />
+                                    <img src="/assets/images/img_milk.jpg" alt="" />
                                   </figure>
                                   <h4 className="sc_title sc_title_regular cmrg_2">
                                     <a href="#">Milk</a>
@@ -590,18 +527,15 @@ function Home() {
                                   <div className="wpb_text_column wpb_content_element ">
                                     <div className="wpb_wrapper">
                                       <p>
-                                        Dairy farming&#8217;s been part of
-                                        agriculture for thousands of years.
+                                        Dairy farming&#8217;s been part of agriculture for thousands
+                                        of years.
                                       </p>
                                     </div>
                                   </div>
                                 </div>
                                 <div className="column-1_4 sc_column_item sc_column_item_2 even">
                                   <figure className="sc_image  sc_image_shape_round">
-                                    <img
-                                      src="/assets/images/img_cheese.webp"
-                                      alt=""
-                                    />
+                                    <img src="/assets/images/img_cheese.webp" alt="" />
                                   </figure>
                                   <h4 className="sc_title sc_title_regular cmrg_2">
                                     <a href="#">Cheese</a>
@@ -609,18 +543,15 @@ function Home() {
                                   <div className="wpb_text_column wpb_content_element ">
                                     <div className="wpb_wrapper">
                                       <p>
-                                        Dairy farming&#8217;s been part of
-                                        agriculture for thousands of years.
+                                        Dairy farming&#8217;s been part of agriculture for thousands
+                                        of years.
                                       </p>
                                     </div>
                                   </div>
                                 </div>
                                 <div className="column-1_4 sc_column_item sc_column_item_3 odd">
                                   <figure className="sc_image  sc_image_shape_round">
-                                    <img
-                                      src="/assets/images/img_butter.jpg"
-                                      alt=""
-                                    />
+                                    <img src="/assets/images/img_butter.jpg" alt="" />
                                   </figure>
                                   <h4 className="sc_title sc_title_regular cmrg_2">
                                     <a href="#">Butter</a>
@@ -628,18 +559,15 @@ function Home() {
                                   <div className="wpb_text_column wpb_content_element ">
                                     <div className="wpb_wrapper">
                                       <p>
-                                        Dairy farming&#8217;s been part of
-                                        agriculture for thousands of years.
+                                        Dairy farming&#8217;s been part of agriculture for thousands
+                                        of years.
                                       </p>
                                     </div>
                                   </div>
                                 </div>
                                 <div className="column-1_4 sc_column_item sc_column_item_4 even">
                                   <figure className="sc_image  sc_image_shape_round">
-                                    <img
-                                      src="/assets/images/img_cream.webp"
-                                      alt=""
-                                    />
+                                    <img src="/assets/images/img_cream.webp" alt="" />
                                   </figure>
                                   <h4 className="sc_title sc_title_regular cmrg_2">
                                     <a href="#">Cream</a>
@@ -647,8 +575,8 @@ function Home() {
                                   <div className="wpb_text_column wpb_content_element ">
                                     <div className="wpb_wrapper">
                                       <p>
-                                        Dairy farming&#8217;s been part of
-                                        agriculture for thousands of years.
+                                        Dairy farming&#8217;s been part of agriculture for thousands
+                                        of years.
                                       </p>
                                     </div>
                                   </div>
@@ -676,7 +604,7 @@ function Home() {
                 >
                   <div className="wpb_column vc_column_container vc_col-sm-1">
                     <div className="vc_column-inner ">
-                      <div className="wpb_wrapper"></div>
+                      <div className="wpb_wrapper" />
                     </div>
                   </div>
                   <div className="wpb_column vc_column_container vc_col-sm-4">
@@ -693,7 +621,7 @@ function Home() {
                   </div>
                   <div className="wpb_column vc_column_container vc_col-sm-1">
                     <div className="vc_column-inner ">
-                      <div className="wpb_wrapper"></div>
+                      <div className="wpb_wrapper" />
                     </div>
                   </div>
                   <div className="wpb_column vc_column_container vc_col-sm-6">
@@ -708,24 +636,23 @@ function Home() {
                               <div className="sc_section margin_bottom_tiny- alignleft">
                                 <div className="sc_section_inner">
                                   <h2 className="sc_section_title sc_item_title sc_item_title_without_descr">
-                                    Featured Recipe<span></span>
+                                    Featured Recipe
+                                    <span />
                                   </h2>
-                                  <div className="sc_section_content_wrap"></div>
+                                  <div className="sc_section_content_wrap" />
                                 </div>
                               </div>
                               <div className="sc_section margin_bottom_huge section_style_call_section">
                                 <div className="sc_section_inner">
                                   <h2 className="sc_section_title sc_item_title sc_item_title_without_descr">
-                                    The Only Ice Cream Recipe You'll Ever Need
+                                    The Only Ice Cream Recipe You&apos;ll Ever Need
                                   </h2>
                                   <div className="sc_section_descr sc_item_descr">
-                                    Although any mammal can produce milk,
-                                    commercial dairy farms are typically
-                                    one-species enterprises. In developed
-                                    countries, dairy farms typically consist of
-                                    high producing dairy cows. Other species
-                                    used in commercial dairy farming include
-                                    goats, sheep, and camels. Donkeys in Italy.
+                                    Although any mammal can produce milk, commercial dairy farms are
+                                    typically one-species enterprises. In developed countries, dairy
+                                    farms typically consist of high producing dairy cows. Other
+                                    species used in commercial dairy farming include goats, sheep,
+                                    and camels. Donkeys in Italy.
                                   </div>
                                   <div className="sc_section_content_wrap">
                                     <a
@@ -744,7 +671,7 @@ function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="vc_row-full-width"></div>
+                <div className="vc_row-full-width" />
                 <Products />
                 <div className="vc_row wpb_row vc_row-fluid">
                   <div className="wpb_column vc_column_container vc_col-sm-12">
@@ -758,13 +685,10 @@ function Home() {
                             <div className="sc_intro intro_1">
                               <div className="sc_intro_inner  sc_intro_style_2">
                                 <div className="sc_intro_content">
-                                  <h2 className="sc_intro_title">
-                                    Breakfast Ideas
-                                  </h2>
+                                  <h2 className="sc_intro_title">Breakfast Ideas</h2>
                                   <div className="sc_intro_descr">
-                                    Heat up your mornings with a bowl of warm
-                                    cereal. Whether you prefer oatmeal, farina,
-                                    or any other kind of porridge, make your
+                                    Heat up your mornings with a bowl of warm cereal. Whether you
+                                    prefer oatmeal, farina, or any other kind of porridge, make your
                                     instant version a bit creamier!
                                   </div>
                                 </div>
@@ -777,9 +701,8 @@ function Home() {
                                 <div className="sc_intro_content">
                                   <h2 className="sc_intro_title">Ice Cream</h2>
                                   <div className="sc_intro_descr">
-                                    Try our low fat, fruitty, caramel, vanilla
-                                    and chocolate ice cream all made by our best
-                                    farm cooks!
+                                    Try our low fat, fruitty, caramel, vanilla and chocolate ice
+                                    cream all made by our best farm cooks!
                                   </div>
                                 </div>
                               </div>
@@ -804,13 +727,11 @@ function Home() {
                         >
                           <div className="sc_section_inner">
                             <h2 className="sc_section_title sc_item_title sc_item_title_without_descr">
-                              Team<span></span>
+                              Team
+                              <span />
                             </h2>
                             <div className="sc_section_content_wrap">
-                              <div
-                                id="sc_team_973_wrap"
-                                className="sc_team_wrap"
-                              >
+                              <div id="sc_team_973_wrap" className="sc_team_wrap">
                                 <div
                                   id="sc_team_973"
                                   className="sc_team sc_team_style_team-3 margin_bottom_large"
@@ -822,10 +743,7 @@ function Home() {
                                         className="sc_team_item sc_team_item_1 odd first"
                                       >
                                         <div className="sc_team_item_avatar">
-                                          <img
-                                            alt=""
-                                            src="/assets/images/team-2-370x370.jpg"
-                                          />
+                                          <img alt="" src="/assets/images/team-2-370x370.jpg" />
                                           <div className="sc_team_item_hover">
                                             <div className="sc_team_item_socials">
                                               <div className="sc_socials sc_socials_type_icons sc_socials_shape_round sc_socials_size_tiny">
@@ -835,7 +753,7 @@ function Home() {
                                                     target="_blank"
                                                     className="social_icons social_twitter"
                                                   >
-                                                    <span className="icon-twitter"></span>
+                                                    <span className="icon-twitter" />
                                                   </a>
                                                 </div>
                                                 <div className="sc_socials_item">
@@ -844,7 +762,7 @@ function Home() {
                                                     target="_blank"
                                                     className="social_icons social_facebook"
                                                   >
-                                                    <span className="icon-facebook"></span>
+                                                    <span className="icon-facebook" />
                                                   </a>
                                                 </div>
                                                 <div className="sc_socials_item">
@@ -853,7 +771,7 @@ function Home() {
                                                     target="_blank"
                                                     className="social_icons social_linkedin"
                                                   >
-                                                    <span className="icon-linkedin"></span>
+                                                    <span className="icon-linkedin" />
                                                   </a>
                                                 </div>
                                               </div>
@@ -862,9 +780,7 @@ function Home() {
                                         </div>
                                         <div className="sc_team_item_info">
                                           <h4 className="sc_team_item_title">
-                                            <a href="single-team.html">
-                                              Bobby Young
-                                            </a>
+                                            <a href="single-team.html">Bobby Young</a>
                                           </h4>
                                           <div className="sc_team_item_position">
                                             A Tractor Driver
@@ -878,10 +794,7 @@ function Home() {
                                         className="sc_team_item sc_team_item_2 even"
                                       >
                                         <div className="sc_team_item_avatar">
-                                          <img
-                                            alt=""
-                                            src="/assets/images/team-4-370x370.jpg"
-                                          />
+                                          <img alt="" src="/assets/images/team-4-370x370.jpg" />
                                           <div className="sc_team_item_hover">
                                             <div className="sc_team_item_socials">
                                               <div className="sc_socials sc_socials_type_icons sc_socials_shape_round sc_socials_size_tiny">
@@ -891,7 +804,7 @@ function Home() {
                                                     target="_blank"
                                                     className="social_icons social_twitter"
                                                   >
-                                                    <span className="icon-twitter"></span>
+                                                    <span className="icon-twitter" />
                                                   </a>
                                                 </div>
                                                 <div className="sc_socials_item">
@@ -900,7 +813,7 @@ function Home() {
                                                     target="_blank"
                                                     className="social_icons social_facebook"
                                                   >
-                                                    <span className="icon-facebook"></span>
+                                                    <span className="icon-facebook" />
                                                   </a>
                                                 </div>
                                                 <div className="sc_socials_item">
@@ -909,7 +822,7 @@ function Home() {
                                                     target="_blank"
                                                     className="social_icons social_gplus-1"
                                                   >
-                                                    <span className="icon-gplus-1"></span>
+                                                    <span className="icon-gplus-1" />
                                                   </a>
                                                 </div>
                                               </div>
@@ -918,9 +831,7 @@ function Home() {
                                         </div>
                                         <div className="sc_team_item_info">
                                           <h4 className="sc_team_item_title">
-                                            <a href="single-team.html">
-                                              Jose Morrison
-                                            </a>
+                                            <a href="single-team.html">Jose Morrison</a>
                                           </h4>
                                           <div className="sc_team_item_position">
                                             A Business Owner
@@ -934,10 +845,7 @@ function Home() {
                                         className="sc_team_item sc_team_item_3 odd"
                                       >
                                         <div className="sc_team_item_avatar">
-                                          <img
-                                            alt=""
-                                            src="/assets/images/team-3-370x370.jpg"
-                                          />
+                                          <img alt="" src="/assets/images/team-3-370x370.jpg" />
                                           <div className="sc_team_item_hover">
                                             <div className="sc_team_item_socials">
                                               <div className="sc_socials sc_socials_type_icons sc_socials_shape_round sc_socials_size_tiny">
@@ -947,7 +855,7 @@ function Home() {
                                                     target="_blank"
                                                     className="social_icons social_twitter"
                                                   >
-                                                    <span className="icon-twitter"></span>
+                                                    <span className="icon-twitter" />
                                                   </a>
                                                 </div>
                                                 <div className="sc_socials_item">
@@ -956,7 +864,7 @@ function Home() {
                                                     target="_blank"
                                                     className="social_icons social_facebook"
                                                   >
-                                                    <span className="icon-facebook"></span>
+                                                    <span className="icon-facebook" />
                                                   </a>
                                                 </div>
                                                 <div className="sc_socials_item">
@@ -965,7 +873,7 @@ function Home() {
                                                     target="_blank"
                                                     className="social_icons social_gplus-1"
                                                   >
-                                                    <span className="icon-gplus-1"></span>
+                                                    <span className="icon-gplus-1" />
                                                   </a>
                                                 </div>
                                               </div>
@@ -974,9 +882,7 @@ function Home() {
                                         </div>
                                         <div className="sc_team_item_info">
                                           <h4 className="sc_team_item_title">
-                                            <a href="single-team.html">
-                                              Laura Smith
-                                            </a>
+                                            <a href="single-team.html">Laura Smith</a>
                                           </h4>
                                           <div className="sc_team_item_position">
                                             A Chief Accountant
@@ -990,10 +896,7 @@ function Home() {
                                         className="sc_team_item sc_team_item_4 even"
                                       >
                                         <div className="sc_team_item_avatar">
-                                          <img
-                                            alt=""
-                                            src="/assets/images/team-1-370x370.jpg"
-                                          />
+                                          <img alt="" src="/assets/images/team-1-370x370.jpg" />
                                           <div className="sc_team_item_hover">
                                             <div className="sc_team_item_socials">
                                               <div className="sc_socials sc_socials_type_icons sc_socials_shape_round sc_socials_size_tiny">
@@ -1003,7 +906,7 @@ function Home() {
                                                     target="_blank"
                                                     className="social_icons social_twitter"
                                                   >
-                                                    <span className="icon-twitter"></span>
+                                                    <span className="icon-twitter" />
                                                   </a>
                                                 </div>
                                                 <div className="sc_socials_item">
@@ -1012,7 +915,7 @@ function Home() {
                                                     target="_blank"
                                                     className="social_icons social_facebook"
                                                   >
-                                                    <span className="icon-facebook"></span>
+                                                    <span className="icon-facebook" />
                                                   </a>
                                                 </div>
                                                 <div className="sc_socials_item">
@@ -1021,7 +924,7 @@ function Home() {
                                                     target="_blank"
                                                     className="social_icons social_linkedin"
                                                   >
-                                                    <span className="icon-linkedin"></span>
+                                                    <span className="icon-linkedin" />
                                                   </a>
                                                 </div>
                                               </div>
@@ -1030,9 +933,7 @@ function Home() {
                                         </div>
                                         <div className="sc_team_item_info">
                                           <h4 className="sc_team_item_title">
-                                            <a href="single-team.html">
-                                              Tyler Holland
-                                            </a>
+                                            <a href="single-team.html">Tyler Holland</a>
                                           </h4>
                                           <div className="sc_team_item_position">
                                             Our Only Marketer
@@ -1050,7 +951,7 @@ function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="vc_row-full-width"></div>
+                <div className="vc_row-full-width" />
                 <div className="vc_row wpb_row vc_row-fluid">
                   <div className="wpb_column vc_column_container vc_col-sm-12">
                     <div className="vc_column-inner ">
@@ -1061,7 +962,8 @@ function Home() {
                         >
                           <div className="sc_section_inner">
                             <h2 className="sc_section_title sc_item_title sc_item_title_without_descr">
-                              Blog<span></span>
+                              Blog
+                              <span />
                             </h2>
                             <div className="sc_section_content_wrap">
                               <div
@@ -1081,44 +983,31 @@ function Home() {
                                             className="hover_icon hover_icon_link"
                                             href="single-post.html"
                                           >
-                                            <img
-                                              alt=""
-                                              src="/assets/images/post-6-370x300.jpg"
-                                            />
+                                            <img alt="" src="/assets/images/post-6-370x300.jpg" />
                                           </a>
                                         </div>
                                       </div>
                                       <div className="post_content isotope_item_content">
                                         <div className="post_info">
                                           <span className="post_info_item post_info_posted">
-                                            <a
-                                              href="single-post.html"
-                                              className="post_info_date"
-                                            >
+                                            <a href="single-post.html" className="post_info_date">
                                               August 23, 2016
                                             </a>
                                           </span>
                                         </div>
                                         <h4 className="post_title">
-                                          <a href="single-post.html">
-                                            It Was Delicious
-                                          </a>
+                                          <a href="single-post.html">It Was Delicious</a>
                                         </h4>
                                         <div className="post_descr">
                                           <p>
-                                            Lorem ipsum dolor sit amet,
-                                            consectetuer adipiscing elit.
-                                            Praesent vestibulum molestie lacus.
-                                            Aenean nonummy hendrerit mauris.
-                                            Phasellus porta.
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                                            elit. Praesent vestibulum molestie lacus. Aenean nonummy
+                                            hendrerit mauris. Phasellus porta.
                                           </p>
                                         </div>
                                         <div className="post_info">
                                           <span className="post_info_item icon-user-1 post_info_posted_by">
-                                            <a
-                                              href="classic.html"
-                                              className="post_info_author"
-                                            >
+                                            <a href="classic.html" className="post_info_author">
                                               Philip James
                                             </a>
                                           </span>
@@ -1128,18 +1017,14 @@ function Home() {
                                               title="Views - 272"
                                               href="single-post.html"
                                             >
-                                              <span className="post_counters_number">
-                                                272
-                                              </span>
+                                              <span className="post_counters_number">272</span>
                                             </a>
                                             <a
                                               className="post_counters_item post_counters_comments icon-comment-1"
                                               title="Comments - 0"
                                               href="single-post.html#respond"
                                             >
-                                              <span className="post_counters_number">
-                                                0
-                                              </span>
+                                              <span className="post_counters_number">0</span>
                                             </a>
                                           </span>
                                         </div>
@@ -1158,44 +1043,31 @@ function Home() {
                                             className="hover_icon hover_icon_link"
                                             href="single-post.html"
                                           >
-                                            <img
-                                              alt=""
-                                              src="/assets/images/post-5-370x300.jpg"
-                                            />
+                                            <img alt="" src="/assets/images/post-5-370x300.jpg" />
                                           </a>
                                         </div>
                                       </div>
                                       <div className="post_content isotope_item_content">
                                         <div className="post_info">
                                           <span className="post_info_item post_info_posted">
-                                            <a
-                                              href="single-post.html"
-                                              className="post_info_date"
-                                            >
+                                            <a href="single-post.html" className="post_info_date">
                                               August 14, 2016
                                             </a>
                                           </span>
                                         </div>
                                         <h4 className="post_title">
-                                          <a href="single-post.html">
-                                            A Better Cream Life
-                                          </a>
+                                          <a href="single-post.html">A Better Cream Life</a>
                                         </h4>
                                         <div className="post_descr">
                                           <p>
-                                            Lorem ipsum dolor sit amet,
-                                            consectetuer adipiscing elit.
-                                            Praesent vestibulum molestie lacus.
-                                            Aenean nonummy hendrerit mauris.
-                                            Phasellus porta.
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                                            elit. Praesent vestibulum molestie lacus. Aenean nonummy
+                                            hendrerit mauris. Phasellus porta.
                                           </p>
                                         </div>
                                         <div className="post_info">
                                           <span className="post_info_item icon-user-1 post_info_posted_by">
-                                            <a
-                                              href="classic.html"
-                                              className="post_info_author"
-                                            >
+                                            <a href="classic.html" className="post_info_author">
                                               Philip James
                                             </a>
                                           </span>
@@ -1205,18 +1077,14 @@ function Home() {
                                               title="Views - 263"
                                               href="single-post.html"
                                             >
-                                              <span className="post_counters_number">
-                                                263
-                                              </span>
+                                              <span className="post_counters_number">263</span>
                                             </a>
                                             <a
                                               className="post_counters_item post_counters_comments icon-comment-1"
                                               title="Comments - 0"
                                               href="single-post.html#respond"
                                             >
-                                              <span className="post_counters_number">
-                                                0
-                                              </span>
+                                              <span className="post_counters_number">0</span>
                                             </a>
                                           </span>
                                         </div>
@@ -1235,44 +1103,31 @@ function Home() {
                                             className="hover_icon hover_icon_link"
                                             href="single-post.html"
                                           >
-                                            <img
-                                              alt=""
-                                              src="/assets/images/post-4-370x300.jpg"
-                                            />
+                                            <img alt="" src="/assets/images/post-4-370x300.jpg" />
                                           </a>
                                         </div>
                                       </div>
                                       <div className="post_content isotope_item_content">
                                         <div className="post_info">
                                           <span className="post_info_item post_info_posted">
-                                            <a
-                                              href="single-post.html"
-                                              className="post_info_date"
-                                            >
+                                            <a href="single-post.html" className="post_info_date">
                                               August 5, 2016
                                             </a>
                                           </span>
                                         </div>
                                         <h4 className="post_title">
-                                          <a href="single-post.html">
-                                            Butter of a Dream
-                                          </a>
+                                          <a href="single-post.html">Butter of a Dream</a>
                                         </h4>
                                         <div className="post_descr">
                                           <p>
-                                            Lorem ipsum dolor sit amet,
-                                            consectetuer adipiscing elit.
-                                            Praesent vestibulum molestie lacus.
-                                            Aenean nonummy hendrerit mauris.
-                                            Phasellus porta.
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                                            elit. Praesent vestibulum molestie lacus. Aenean nonummy
+                                            hendrerit mauris. Phasellus porta.
                                           </p>
                                         </div>
                                         <div className="post_info">
                                           <span className="post_info_item icon-user-1 post_info_posted_by">
-                                            <a
-                                              href="classic.html"
-                                              className="post_info_author"
-                                            >
+                                            <a href="classic.html" className="post_info_author">
                                               Philip James
                                             </a>
                                           </span>
@@ -1282,18 +1137,14 @@ function Home() {
                                               title="Views - 265"
                                               href="single-post.html"
                                             >
-                                              <span className="post_counters_number">
-                                                265
-                                              </span>
+                                              <span className="post_counters_number">265</span>
                                             </a>
                                             <a
                                               className="post_counters_item post_counters_comments icon-comment-1"
                                               title="Comments - 0"
                                               href="single-post.html#respond"
                                             >
-                                              <span className="post_counters_number">
-                                                0
-                                              </span>
+                                              <span className="post_counters_number">0</span>
                                             </a>
                                           </span>
                                         </div>
@@ -1325,10 +1176,7 @@ function Home() {
                   <div className="wpb_column vc_column_container vc_col-sm-12">
                     <div className="vc_column-inner vc_custom_1475227276833">
                       <div className="wpb_wrapper">
-                        <div
-                          id="sc_clients_966_wrap"
-                          className="sc_clients_wrap"
-                        >
+                        <div id="sc_clients_966_wrap" className="sc_clients_wrap">
                           <div
                             id="sc_clients_966"
                             className="sc_clients sc_clients_style_clients-1 "
@@ -1341,92 +1189,62 @@ function Home() {
                               data-slides-min-width="100"
                             >
                               <div className="slides swiper-wrapper">
-                                <div
-                                  className="swiper-slide"
-                                  data-style="width:100%;"
-                                >
+                                <div className="swiper-slide" data-style="width:100%;">
                                   <div
                                     id="sc_clients_966_1"
                                     className="sc_clients_item sc_clients_item_1 odd first"
                                   >
                                     <div className="sc_client_image">
-                                      <img
-                                        alt=""
-                                        src="/assets/images/5-1.png"
-                                      />
+                                      <img alt="" src="/assets/images/5-1.png" />
                                     </div>
                                   </div>
                                 </div>
-                                <div
-                                  className="swiper-slide"
-                                  data-style="width:100%;"
-                                >
+                                <div className="swiper-slide" data-style="width:100%;">
                                   <div
                                     id="sc_clients_966_2"
                                     className="sc_clients_item sc_clients_item_2 even"
                                   >
                                     <div className="sc_client_image">
-                                      <img
-                                        alt=""
-                                        src="/assets/images/3-1.png"
-                                      />
+                                      <img alt="" src="/assets/images/3-1.png" />
                                     </div>
                                   </div>
                                 </div>
-                                <div
-                                  className="swiper-slide"
-                                  data-style="width:100%;"
-                                >
+                                <div className="swiper-slide" data-style="width:100%;">
                                   <div
                                     id="sc_clients_966_3"
                                     className="sc_clients_item sc_clients_item_3 odd"
                                   >
                                     <div className="sc_client_image">
-                                      <img
-                                        alt=""
-                                        src="/assets/images/2-1.png"
-                                      />
+                                      <img alt="" src="/assets/images/2-1.png" />
                                     </div>
                                   </div>
                                 </div>
-                                <div
-                                  className="swiper-slide"
-                                  data-style="width:100%;"
-                                >
+                                <div className="swiper-slide" data-style="width:100%;">
                                   <div
                                     id="sc_clients_966_4"
                                     className="sc_clients_item sc_clients_item_4 even"
                                   >
                                     <div className="sc_client_image">
-                                      <img
-                                        alt=""
-                                        src="/assets/images/1-1.png"
-                                      />
+                                      <img alt="" src="/assets/images/1-1.png" />
                                     </div>
                                   </div>
                                 </div>
-                                <div
-                                  className="swiper-slide"
-                                  data-style="width:100%;"
-                                >
+                                <div className="swiper-slide" data-style="width:100%;">
                                   <div
                                     id="sc_clients_966_5"
                                     className="sc_clients_item sc_clients_item_5 odd"
                                   >
                                     <div className="sc_client_image">
-                                      <img
-                                        alt=""
-                                        src="/assets/images/4-1.png"
-                                      />
+                                      <img alt="" src="/assets/images/4-1.png" />
                                     </div>
                                   </div>
                                 </div>
                               </div>
                               <div className="sc_slider_controls_wrap">
-                                <a className="sc_slider_prev" href="#"></a>
-                                <a className="sc_slider_next" href="#"></a>
+                                <a className="sc_slider_prev" href="#" />
+                                <a className="sc_slider_next" href="#" />
                               </div>
-                              <div className="sc_slider_pagination_wrap"></div>
+                              <div className="sc_slider_pagination_wrap" />
                             </div>
                           </div>
                         </div>
@@ -1434,10 +1252,10 @@ function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="vc_row-full-width"></div>
+                <div className="vc_row-full-width" />
               </section>
             </article>
-            <section className="related_wrap related_wrap_empty"></section>
+            <section className="related_wrap related_wrap_empty" />
           </div>
         </div>
       </div>

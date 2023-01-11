@@ -1,7 +1,7 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import FrontTemplate from "./FrontTemplate";
-import Home from "./pages/Home";
-import Shop from "./pages/Shop";
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import FrontTemplate from './FrontTemplate';
+import Home from './pages/Home';
+import Shop from './pages/Shop';
 
 function App() {
   return (

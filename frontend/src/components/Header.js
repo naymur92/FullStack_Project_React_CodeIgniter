@@ -1,6 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import HeaderMenuItems from "./HeaderMenuItems";
+import React from 'react';
+import HeaderMenuItems from './HeaderMenuItems';
 
 function Header() {
   return (
@@ -31,7 +30,7 @@ function Header() {
               </div>
               <div className="contact_field contact_cart d-flex justify-content-between">
                 <a href="http://localhost:8080" className="text-warning mt-1">
-                  <i class="fa-solid fa-user fa-2x"></i>
+                  <i className="fa-solid fa-user fa-2x" />
                 </a>
 
                 <a
@@ -40,10 +39,8 @@ function Header() {
                   data-items="0"
                   data-summa="&#036;0.00"
                 >
-                  <span className="contact_icon icon-1"></span>
-                  <span className="contact_label contact_cart_label">
-                    cart:
-                  </span>
+                  <span className="contact_icon icon-1" />
+                  <span className="contact_label contact_cart_label">cart:</span>
                   <span className="contact_cart_totals">
                     <span className="cart_items">0 Items</span>
                     <span className="cart_summa">&#36;0.00</span>
@@ -76,7 +73,7 @@ function Header() {
       </header>
       <div className="header_mobile">
         <div className="content_wrap">
-          <div className="menu_button icon-menu"></div>
+          <div className="menu_button icon-menu" />
           <div className="logo">
             <a href="index.html">
               <img
@@ -98,9 +95,9 @@ function Header() {
               </ul>
             </nav>
           </div>
-          <div className="panel_bottom"></div>
+          <div className="panel_bottom" />
         </div>
-        <div className="mask"></div>
+        <div className="mask" />
       </div>
     </>
   );
