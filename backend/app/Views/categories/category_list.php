@@ -75,7 +75,7 @@
                         <img src="/assets/images/categories/<?= $category['category_image']; ?>" class="img-thumbnail" width="100px" alt="">
                       </td>
                       <td><?= date("d M, Y - h:i A", strtotime($category['created_at'])); ?></td>
-                      <td><?= $category['updated_at'] == 0 ? '' : date("d M, Y - h:i A", strtotime($category['updated_at'])); ?></td>
+                      <td><?= strtotime($category['updated_at']) == -62169962964 ? '' : date("d M, Y - h:i A", strtotime($category['updated_at'])); ?></td>
                       <td class="d-flex justify-content-center">
                         <!-- <a href="<?php // echo site_url('categories/show/' . $category['cat_id']); 
                                       ?>" class="mx-2"><i class="fa fa-eye text-primary"></i></a> -->
