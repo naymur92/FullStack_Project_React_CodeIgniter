@@ -85,7 +85,7 @@
                       <td><?= $product['product_stock']; ?></td>
                       <td><?= ucfirst($product['product_status']); ?></td>
                       <td>
-                        <img src="/assets/images/products/<?= $product['product_image']; ?>" class="img-thumbnail" width="100px" alt="">
+                        <img src="<?= base_url(); ?>/assets/images/products/<?= $product['product_image']; ?>" class="img-thumbnail" width="100px" alt="">
                       </td>
                       <td><?= date("d M, Y - h:i A", strtotime($product['created_at'])); ?></td>
                       <td class="d-flex justify-content-center">

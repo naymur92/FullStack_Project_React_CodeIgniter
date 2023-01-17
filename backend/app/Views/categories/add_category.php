@@ -21,7 +21,7 @@ if ($session->has('errors')) {
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="<?= site_url(); ?>">Home</a></li>
-            <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
+            <li class="breadcrumb-item"><a href="<?= base_url('categories') ?>">Categories</a></li>
             <li class="breadcrumb-item active">Add Category</li>
           </ol>
         </div><!-- /.col -->

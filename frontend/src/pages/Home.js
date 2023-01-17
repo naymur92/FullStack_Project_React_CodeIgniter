@@ -30,16 +30,10 @@ function Home() {
                   <div className="wpb_column vc_column_container vc_col-sm-6">
                     <div className="vc_column-inner vc_custom_1475235191339">
                       <div className="wpb_wrapper">
-                        <div
-                          className="sc_section sc_section_block "
-                          data-animation="animated fadeInLeft normal"
-                        >
+                        <div className="sc_section sc_section_block " data-animation="animated fadeInLeft normal">
                           <div className="sc_section_inner">
                             <div className="sc_section_content_wrap">
-                              <div
-                                className="sc_section margin_bottom_tiny- alignleft"
-                                style={{ width: '100%' }}
-                              >
+                              <div className="sc_section margin_bottom_tiny- alignleft" style={{ width: '100%' }}>
                                 <div className="sc_section_inner">
                                   <h2 className="sc_section_title sc_item_title sc_item_title_without_descr">
                                     What&apos;s Fresh
@@ -56,11 +50,10 @@ function Home() {
                                     to Yours
                                   </h2>
                                   <div className="sc_section_descr sc_item_descr">
-                                    Although any mammal can produce milk, commercial dairy farms are
-                                    typically one-species enterprises. In developed countries, dairy
-                                    farms typically consist of high producing dairy cows. Other
-                                    species used in commercial dairy farming include goats, sheep,
-                                    and camels. Donkeys in Italy.
+                                    Although any mammal can produce milk, commercial dairy farms are typically
+                                    one-species enterprises. In developed countries, dairy farms typically consist of
+                                    high producing dairy cows. Other species used in commercial dairy farming include
+                                    goats, sheep, and camels. Donkeys in Italy.
                                   </div>
                                   <div className="sc_section_content_wrap">
                                     <Link
@@ -125,9 +118,8 @@ function Home() {
                                 <div className="sc_intro_content">
                                   <h2 className="sc_intro_title">Breakfast Ideas</h2>
                                   <div className="sc_intro_descr">
-                                    Heat up your mornings with a bowl of warm cereal. Whether you
-                                    prefer oatmeal, farina, or any other kind of porridge, make your
-                                    instant version a bit creamier!
+                                    Heat up your mornings with a bowl of warm cereal. Whether you prefer oatmeal,
+                                    farina, or any other kind of porridge, make your instant version a bit creamier!
                                   </div>
                                 </div>
                               </div>
@@ -139,8 +131,8 @@ function Home() {
                                 <div className="sc_intro_content">
                                   <h2 className="sc_intro_title">Ice Cream</h2>
                                   <div className="sc_intro_descr">
-                                    Try our low fat, fruitty, caramel, vanilla and chocolate ice
-                                    cream all made by our best farm cooks!
+                                    Try our low fat, fruitty, caramel, vanilla and chocolate ice cream all made by our
+                                    best farm cooks!
                                   </div>
                                 </div>
                               </div>

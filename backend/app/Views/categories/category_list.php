@@ -72,7 +72,7 @@
                       <td><?= $category['category_name'] ?></td>
                       <td><?= $category['category_desc'] ?></td>
                       <td>
-                        <img src="/assets/images/categories/<?= $category['category_image']; ?>" class="img-thumbnail" width="100px" alt="">
+                        <img src="<?= base_url() ?>/assets/images/categories/<?= $category['category_image']; ?>" class="img-thumbnail" width="100px" alt="">
                       </td>
                       <td><?= date("d M, Y - h:i A", strtotime($category['created_at'])); ?></td>
                       <td><?= strtotime($category['updated_at']) == -62169962964 ? '' : date("d M, Y - h:i A", strtotime($category['updated_at'])); ?></td>

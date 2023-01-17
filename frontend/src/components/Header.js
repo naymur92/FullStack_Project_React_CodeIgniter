@@ -12,54 +12,44 @@ function Header() {
               <div className="contact_logo">
                 <div className="logo">
                   <a href="/">
-                    <img
-                      src="/assets/images/logo.png"
-                      className="logo_main"
-                      alt=""
-                      width="239"
-                      height="59"
-                    />
-                    <img
-                      src="/assets/images/logo.png"
-                      className="logo_fixed"
-                      alt=""
-                      width="239"
-                      height="59"
-                    />
+                    <img src="/assets/images/logo.png" className="logo_main" alt="" width="239" height="59" />
+                    <img src="/assets/images/logo.png" className="logo_fixed" alt="" width="239" height="59" />
                   </a>
                 </div>
               </div>
-              <div className="contact_field contact_cart d-flex justify-content-between">
-                <a href={`${API_PATH}`} className="text-warning mt-1">
-                  <i className="fa-solid fa-user fa-2x" />
-                </a>
-
-                <a
-                  href="#"
-                  className="top_panel_cart_button"
-                  data-items="0"
-                  data-summa="&#036;0.00"
-                >
-                  <span className="contact_icon icon-1" />
-                  <span className="contact_label contact_cart_label">cart:</span>
-                  <span className="contact_cart_totals">
-                    <span className="cart_items">0 Items</span>
-                    <span className="cart_summa">&#36;0.00</span>
-                  </span>
-                </a>
-                <ul className="widget_area sidebar_cart sidebar">
-                  <li>
-                    <div className="widget woocommerce widget_shopping_cart">
-                      <div className="hide_cart_widget_if_empty">
-                        <div className="widget_shopping_cart_content">
-                          <p className="woocommerce-mini-cart__empty-message">
-                            No products in the cart.
-                          </p>
+              <div className="float-end d-flex justify-content-between align-items-center">
+                <div className="contact_field contact_cart">
+                  <a href="#" className="top_panel_cart_button" data-items="0" data-summa="&#036;0.00">
+                    <span className="contact_icon icon-1" />
+                    <span className="contact_label contact_cart_label">cart:</span>
+                    <span className="contact_cart_totals">
+                      <span className="cart_items">0 Items</span>
+                      <span className="cart_summa">&#36;0.00</span>
+                    </span>
+                  </a>
+                  <ul className="widget_area sidebar_cart sidebar">
+                    <li>
+                      <div className="widget woocommerce widget_shopping_cart">
+                        <div className="hide_cart_widget_if_empty">
+                          <div className="widget_shopping_cart_content">
+                            <p className="woocommerce-mini-cart__empty-message">No products in the cart.</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </li>
-                </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div className="user_field">
+                  <a href="#" className="top_panel_user_button text-warning mt-1">
+                    <i className="fa-solid fa-user fa-2x" />
+                  </a>
+                  <ul className="widget_area sidebar_cart sidebar mt-4" style={{ marginRight: '5px' }}>
+                    <li>Hello</li>
+                    <li>
+                      <a href={`${API_PATH}`}>Login</a>
+                    </li>
+                  </ul>
+                </div>
               </div>
               <div className="menu_main_wrap">
                 <nav className="menu_main_nav_area menu_hover_fade">
@@ -77,13 +67,7 @@ function Header() {
           <div className="menu_button icon-menu" />
           <div className="logo">
             <a href="index.html">
-              <img
-                src="/assets/images/logo.png"
-                className="logo_main"
-                alt=""
-                width="239"
-                height="59"
-              />
+              <img src="/assets/images/logo.png" className="logo_main" alt="" width="239" height="59" />
             </a>
           </div>
         </div>

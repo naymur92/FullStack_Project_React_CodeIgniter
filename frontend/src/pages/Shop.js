@@ -41,16 +41,8 @@ function Shop() {
               <header className="woocommerce-products-header" />
               <div className="mode_buttons">
                 <form action="#" method="post">
-                  <a
-                    href="shop.html"
-                    className="woocommerce_thumbs icon-th"
-                    title="Show products as thumbs"
-                  />
-                  <a
-                    href="shop-list.html"
-                    className="woocommerce_list icon-th-list"
-                    title="Show products as list"
-                  />
+                  <a href="shop.html" className="woocommerce_thumbs icon-th" title="Show products as thumbs" />
+                  <a href="shop-list.html" className="woocommerce_list icon-th-list" title="Show products as list" />
                 </form>
               </div>
               <p className="woocommerce-result-count">Showing all 9 results</p>
@@ -68,10 +60,7 @@ function Shop() {
               </form>
               <ul className="products">
                 {products?.map((product) => (
-                  <li
-                    key={product.id}
-                    className="product has-post-thumbnail column-1_3 instock purchasable"
-                  >
+                  <li key={product.id} className="product has-post-thumbnail column-1_3 instock purchasable">
                     <div className="post_item_wrap">
                       <div className="post_featured">
                         <div className="post_thumb">
@@ -113,19 +102,13 @@ function Shop() {
           </div>
           <div className="sidebar widget_area scheme_light" role="complementary">
             <div className="sidebar_inner widget_area_inner">
-              <aside
-                id="woocommerce_widget_cart-2"
-                className="widget woocommerce widget_shopping_cart"
-              >
+              <aside id="woocommerce_widget_cart-2" className="widget woocommerce widget_shopping_cart">
                 <h4 className="widget_title">Your Cart</h4>
                 <div className="widget_shopping_cart_content">
                   <p className="woocommerce-mini-cart__empty-message">No products in the cart.</p>
                 </div>
               </aside>
-              <aside
-                id="woocommerce_price_filter-2"
-                className="widget woocommerce widget_price_filter"
-              >
+              <aside id="woocommerce_price_filter-2" className="widget woocommerce widget_price_filter">
                 <h4 className="widget_title">Price Filter</h4>
                 <form method="get" action="shop.html">
                   <div className="price_slider_wrapper">
