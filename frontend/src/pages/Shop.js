@@ -13,10 +13,17 @@ function Shop() {
 
   useEffect(() => {
     getProducts();
+    const cont = document.getElementsByTagName('body')[0];
+    cont.className =
+      'archive shoppg post-type-archive post-type-archive-product woocommerce woocommerce-page body_style_wide body_filled article_style_stretch layout_excerpt template_excerpt scheme_original top_panel_show top_panel_above sidebar_show sidebar_left sidebar_outer_hide vc_responsive';
+
+    return () => {
+      cont.className = '';
+    };
   }, []);
 
   return (
-    <div className="archive shoppg post-type-archive post-type-archive-product woocommerce woocommerce-page body_style_wide body_filled article_style_stretch layout_excerpt template_excerpt scheme_original top_panel_show top_panel_above sidebar_show sidebar_left sidebar_outer_hide vc_responsive">
+    <>
       <div className="top_panel_title top_panel_style_1 title_present breadcrumbs_present scheme_original">
         <div className="bg_cust_1 top_panel_title_inner top_panel_inner_style_1 title_present_inner breadcrumbs_present_inner">
           <div className="content_wrap">
@@ -39,17 +46,11 @@ function Shop() {
                 <a href="index.html">Home</a>&nbsp;&#47;&nbsp;Shop
               </nav>
               <header className="woocommerce-products-header" />
-              <div className="mode_buttons">
-                <form action="#" method="post">
-                  <a href="shop.html" className="woocommerce_thumbs icon-th" title="Show products as thumbs" />
-                  <a href="shop-list.html" className="woocommerce_list icon-th-list" title="Show products as list" />
-                </form>
-              </div>
               <p className="woocommerce-result-count">Showing all 9 results</p>
               <form className="woocommerce-ordering" method="get">
                 <select name="orderby" className="orderby">
-                  <option value="popularity">Sort by popularity</option>
-                  <option value="rating">Sort by average rating</option>
+                  {/* <option value="popularity">Sort by popularity</option>
+                  <option value="rating">Sort by average rating</option> */}
                   <option value="date" selected="selected">
                     Sort by newness
                   </option>
@@ -60,7 +61,10 @@ function Shop() {
               </form>
               <ul className="products">
                 {products?.map((product) => (
-                  <li key={product.id} className="product has-post-thumbnail column-1_3 instock purchasable">
+                  <li
+                    key={product.id}
+                    className="product has-post-thumbnail column-1_3 instock purchasable"
+                  >
                     <div className="post_item_wrap">
                       <div className="post_featured">
                         <div className="post_thumb">
@@ -83,14 +87,7 @@ function Shop() {
                             {Number(product.product_price).toFixed(2)}
                           </span>
                         </span>
-                        <a
-                          rel="nofollow"
-                          role="button"
-                          data-quantity="1"
-                          data-product_id="471"
-                          data-product_sku=""
-                          className="button add_to_cart_button"
-                        >
+                        <a role="button" className="button add_to_cart_button">
                           Add to Cart
                         </a>
                       </div>
@@ -102,13 +99,19 @@ function Shop() {
           </div>
           <div className="sidebar widget_area scheme_light" role="complementary">
             <div className="sidebar_inner widget_area_inner">
-              <aside id="woocommerce_widget_cart-2" className="widget woocommerce widget_shopping_cart">
+              <aside
+                id="woocommerce_widget_cart-2"
+                className="widget woocommerce widget_shopping_cart"
+              >
                 <h4 className="widget_title">Your Cart</h4>
                 <div className="widget_shopping_cart_content">
                   <p className="woocommerce-mini-cart__empty-message">No products in the cart.</p>
                 </div>
               </aside>
-              <aside id="woocommerce_price_filter-2" className="widget woocommerce widget_price_filter">
+              {/* <aside
+                id="woocommerce_price_filter-2"
+                className="widget woocommerce widget_price_filter"
+              >
                 <h4 className="widget_title">Price Filter</h4>
                 <form method="get" action="shop.html">
                   <div className="price_slider_wrapper">
@@ -143,10 +146,13 @@ function Shop() {
                     </div>
                   </div>
                 </form>
-              </aside>
+              </aside> */}
               <aside className="widget woocommerce widget_product_categories">
                 <h4 className="widget_title">Categories</h4>
                 <ul className="product-categories">
+                  <li className="cat-item">
+                    <a href="#">All</a>
+                  </li>
                   <li className="cat-item">
                     <a href="#">Butter</a>
                   </li>
@@ -191,7 +197,7 @@ function Shop() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

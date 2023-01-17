@@ -13,9 +13,9 @@ function HeaderMenuItems() {
   return (
     <>
       <li className={`menu-item ${isActive('/')}`}>
-        <a href="/">
+        <Link to="/">
           <span>Home</span>
-        </a>
+        </Link>
       </li>
       <li className={`menu-item ${isActive('/about')}`}>
         <Link to="/about">

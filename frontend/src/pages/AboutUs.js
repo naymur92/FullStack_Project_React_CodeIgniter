@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Clients from '../components/Clients';
 import Feature from '../components/Feature';
 import Welcome from '../components/Welcome';
 
 function AboutUs() {
+  useEffect(() => {
+    const cont = document.getElementsByTagName('body')[0];
+    cont.className =
+      'page ab1 body_style_wide body_filled article_style_stretch layout_single-standard template_single-standard scheme_original top_panel_show top_panel_above sidebar_hide sidebar_outer_hide vc_responsive';
+
+    return () => {
+      cont.className = '';
+    };
+  }, []);
+
   return (
-    <div className="page ab1 body_style_wide body_filled article_style_stretch layout_single-standard template_single-standard scheme_original top_panel_show top_panel_above sidebar_hide sidebar_outer_hide vc_responsive">
+    <>
       <div className="top_panel_title top_panel_style_1 title_present breadcrumbs_present scheme_original">
         <div className="bg_cust_1 top_panel_title_inner top_panel_inner_style_1 title_present_inner breadcrumbs_present_inner">
           <div className="content_wrap">
@@ -37,7 +47,7 @@ function AboutUs() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
