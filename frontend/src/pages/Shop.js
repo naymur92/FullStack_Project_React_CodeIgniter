@@ -1,9 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useOutletContext } from 'react-router-dom';
 import { API_PATH } from '../API_PATH';
 
 function Shop() {
   const [products, setProducts] = useState([]);
+  const [cartItems, onAdd] = useOutletContext();
 
   const getProducts = async () => {
     await axios.get(`${API_PATH}/prodlists`).then((res) => {
@@ -87,7 +89,11 @@ function Shop() {
                             {Number(product.product_price).toFixed(2)}
                           </span>
                         </span>
-                        <a role="button" className="button add_to_cart_button">
+                        <a
+                          role="button"
+                          onClick={() => onAdd(product)}
+                          className="button add_to_cart_button"
+                        >
                           Add to Cart
                         </a>
                       </div>
@@ -105,7 +111,11 @@ function Shop() {
               >
                 <h4 className="widget_title">Your Cart</h4>
                 <div className="widget_shopping_cart_content">
-                  <p className="woocommerce-mini-cart__empty-message">No products in the cart.</p>
+                  {cartItems?.length === 0 ? (
+                    <p className="woocommerce-mini-cart__empty-message">No products in the cart.</p>
+                  ) : (
+                    <p>Cart Items</p>
+                  )}
                 </div>
               </aside>
               {/* <aside
