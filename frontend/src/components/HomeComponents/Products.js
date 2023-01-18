@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { API_PATH } from '../../API_PATH';
 
-function Products() {
+function Products({ onAdd }) {
   const [products, setProducts] = useState([]);
 
   const getProducts = async () => {
@@ -56,11 +56,8 @@ function Products() {
                                 </span>
                               </span>
                               <a
-                                rel="nofollow"
                                 role="button"
-                                data-quantity="1"
-                                data-product_id="471"
-                                data-product_sku=""
+                                onClick={() => onAdd(product)}
                                 className="button add_to_cart_button"
                               >
                                 Add to Cart

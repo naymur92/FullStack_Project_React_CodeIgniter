@@ -361,11 +361,17 @@ function dairy_farm_ready_actions() {
 
   //  Hide Cart
   jQuery(document).on('click', (e) => {
-    // console.log(jQuery(e.target));
+    console.log(jQuery(e.target));
     if (
       jQuery(e.target).is('.widget_area.sidebar_cart') === false &&
       jQuery(e.target).is('.fa.fa-times.text-danger') === false &&
-      jQuery(e.target).parents('.widget_area.sidebar_cart').length != 1
+      jQuery(e.target).parents('.widget_area.sidebar_cart').length != 1 || (
+        jQuery(e.target).is('.sc_btn').length ||
+      jQuery(e.target).is('.chk_btn').length ||
+      jQuery(e.target).is('.logout_btn') === true ||
+      jQuery(e.target).is('.login_btn') === true ||
+      jQuery(e.target).is('.register_btn') === true
+      )
     ) {
       jQuery('.sidebar_cart').slideUp();
     }

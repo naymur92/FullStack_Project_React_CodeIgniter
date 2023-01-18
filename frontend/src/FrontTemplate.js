@@ -6,6 +6,7 @@ import useLocalStorage from './hooks/useLocalStorage';
 
 function FrontTemplate() {
   const [cartItems, setCartItems] = useLocalStorage('cartitems', []);
+  const [loginInfo, setLoginInfo] = useLocalStorage('logininfo', []);
 
   // Add items to cart
   const onAdd = (product) => {
@@ -52,9 +53,18 @@ function FrontTemplate() {
 
   return (
     <>
-      <Header cartItems={cartItems} onEmpty={onEmpty} itemsPrice={itemsPrice} />
+      <Header
+        cartItems={cartItems}
+        setCartItems={setCartItems}
+        onEmpty={onEmpty}
+        itemsPrice={itemsPrice}
+        loginInfo={loginInfo}
+        setLoginInfo={setLoginInfo}
+      />
 
-      <Outlet context={[cartItems, onAdd, onRemove, onEmpty, itemsPrice]} />
+      <Outlet
+        context={[cartItems, onAdd, onRemove, onEmpty, itemsPrice, loginInfo, setLoginInfo]}
+      />
 
       <Footer />
     </>

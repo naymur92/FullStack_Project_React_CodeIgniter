@@ -37,7 +37,7 @@ function Register() {
                 <div className="col-6">
                   <div className="card" style={{ border: '0px' }}>
                     <div className="card-header">
-                      <h4 className="text-center">Login Form</h4>
+                      <h4 className="text-center">Registration Form</h4>
                     </div>
                     <form action="">
                       <div className="card-body">

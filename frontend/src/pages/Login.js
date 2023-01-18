@@ -1,16 +1,53 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate, useOutletContext } from 'react-router-dom';
 import { API_PATH } from '../API_PATH';
+import { FRONT_API_PATH } from '../FRONT_API_PATH';
 
 function Login() {
+  const [cartItems, onAdd, onRemove, onEmpty, itemsPrice, loginInfo, setLoginInfo] =
+    useOutletContext();
+  const [userInfo, setUserInfo] = useState({});
+  const navigate = useNavigate();
+
+  const authenticate = () => {
+    if (loginInfo?.loginStatus) {
+      navigate('/');
+    }
+    // console.log(loginInfo);
+  };
+
+  const onChangeValue = (e) => {
+    setUserInfo({
+      ...userInfo,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const submitForm = async (event) => {
+    event.preventDefault();
+    // console.log(userInfo);
+
+    await axios.get(`${FRONT_API_PATH}/login.php`, { params: userInfo }).then((res) => {
+      if (res.data.success) {
+        setLoginInfo({ ...res.data.logininfo, loginStatus: true });
+        navigate('/');
+      }
+      alert(res.data.msg);
+      // console.log(res.data);
+    });
+  };
   useEffect(() => {
     const cont = document.getElementsByTagName('body')[0];
+    authenticate();
+
     cont.className =
       'page contactspg body_style_wide body_filled article_style_stretch layout_single-standard template_single-standard scheme_original top_panel_show top_panel_above sidebar_hide sidebar_outer_hide vc_responsive';
 
     return () => {
       cont.className = '';
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -39,7 +76,7 @@ function Login() {
                     <div className="card-header">
                       <h4 className="text-center">Login Form</h4>
                     </div>
-                    <form action="">
+                    <form onSubmit={submitForm}>
                       <div className="card-body">
                         <div className="form-group my-2">
                           <label htmlFor="_email">
@@ -49,6 +86,7 @@ function Login() {
                             type="email"
                             id="_email"
                             name="email"
+                            onChange={onChangeValue}
                             className="form-control"
                             placeholder="Enter Email"
                           />
@@ -61,6 +99,7 @@ function Login() {
                             type="password"
                             id="_pass"
                             name="password"
+                            onChange={onChangeValue}
                             className="form-control"
                             placeholder="Enter Password"
                           />
