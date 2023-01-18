@@ -4,7 +4,8 @@ import { API_PATH } from '../API_PATH';
 
 function Cart() {
   const navigate = useNavigate();
-  const [cartItems, onAdd, onRemove, onEmpty, itemsPrice] = useOutletContext();
+  const [cartItems, setCartItems, onAdd, onRemove, onEmpty, itemsPrice, loginInfo, setLoginInfo] =
+    useOutletContext();
 
   if (cartItems?.length === 0) {
     navigate('/shop');

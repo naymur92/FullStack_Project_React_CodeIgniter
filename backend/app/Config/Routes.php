@@ -39,16 +39,16 @@ $routes->group('', ['filter' => 'authGuard'], static function ($routes) {
     $routes->get('/', 'Dashboard::index');
     $routes->presenter('products');
     $routes->presenter('categories');
+    $routes->presenter('orders');
 
     $routes->get('logout', 'SignIn::logOut');
-});
 
+    $routes->get('reportings/ordersummary', 'Reportings::orderSummary');
+    $routes->get('reportings/makeordersummary', 'Reportings::make_order_summary');
+});
 
 $routes->get('prodlists', 'FrontProducts::index');
 $routes->get('catlists', 'FrontCategories::index');
-
-$routes->get('qb', 'Qb::index');
-$routes->get('qb/query', 'Qb::query');
 
 $routes->get('signup', 'SignUp::index');
 $routes->post('signup/store', 'SignUp::store');

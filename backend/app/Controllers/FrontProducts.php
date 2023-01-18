@@ -12,7 +12,7 @@ class FrontProducts extends BaseController
     public function index()
     {
         $model = new ProductModel();
-        $data = $model->orderBy('created_at', 'DESC')->findAll();
+        $data = $model->orderBy('created_at', 'DESC')->where('product_stock > 0')->findAll();
 
         return $this->respond($data);
     }

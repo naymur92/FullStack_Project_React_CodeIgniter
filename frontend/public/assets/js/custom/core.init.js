@@ -361,7 +361,7 @@ function dairy_farm_ready_actions() {
 
   //  Hide Cart
   jQuery(document).on('click', (e) => {
-    console.log(jQuery(e.target));
+    // console.log(jQuery(e.target));
     if (
       jQuery(e.target).is('.widget_area.sidebar_cart') === false &&
       jQuery(e.target).is('.fa.fa-times.text-danger') === false &&

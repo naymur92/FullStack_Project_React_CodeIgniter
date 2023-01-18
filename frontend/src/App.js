@@ -1,4 +1,5 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import './App.css';
 import FrontTemplate from './FrontTemplate';
 import AboutUs from './pages/AboutUs';
 import Cart from './pages/Cart';

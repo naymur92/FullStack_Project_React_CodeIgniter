@@ -120,9 +120,14 @@ function Header(props) {
                 </div>
                 <div className="user_field">
                   <a href="#" className="top_panel_user_button text-warning mt-1">
-                    <i className="fa-solid fa-user mt-1" style={{ fontSize: '1.6em' }} />
+                    <i
+                      className="fa-solid fa-user mt-1 position-relative"
+                      style={{ fontSize: '1.6em' }}
+                    />
                     {loginInfo?.loginStatus ? (
-                      <span className="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-success" />
+                      <span className="position-absolute top-10 start-20 translate-middle p-2 bg-success border border-light rounded-circle">
+                        <span className="visually-hidden">New alerts</span>
+                      </span>
                     ) : null}
                   </a>
                   <ul

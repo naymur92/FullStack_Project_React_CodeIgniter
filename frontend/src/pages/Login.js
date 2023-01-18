@@ -5,7 +5,7 @@ import { API_PATH } from '../API_PATH';
 import { FRONT_API_PATH } from '../FRONT_API_PATH';
 
 function Login() {
-  const [cartItems, onAdd, onRemove, onEmpty, itemsPrice, loginInfo, setLoginInfo] =
+  const [cartItems, setCartItems, onAdd, onRemove, onEmpty, itemsPrice, loginInfo, setLoginInfo] =
     useOutletContext();
   const [userInfo, setUserInfo] = useState({});
   const navigate = useNavigate();

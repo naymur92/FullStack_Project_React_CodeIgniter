@@ -5,7 +5,8 @@ import { API_PATH } from '../API_PATH';
 
 function Shop() {
   const [products, setProducts] = useState([]);
-  const [cartItems, onAdd, onRemove, onEmpty, itemsPrice] = useOutletContext();
+  const [cartItems, setCartItems, onAdd, onRemove, onEmpty, itemsPrice, loginInfo, setLoginInfo] =
+    useOutletContext();
 
   const getProducts = async () => {
     await axios.get(`${API_PATH}/prodlists`).then((res) => {

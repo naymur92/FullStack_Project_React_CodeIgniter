@@ -49,7 +49,7 @@ function FrontTemplate() {
   };
 
   // Calculate total price
-  const itemsPrice = cartItems.reduce((a, c) => a + c.product_price * c.qty, 0);
+  const itemsPrice = cartItems?.reduce((a, c) => a + c.product_price * c.qty, 0);
 
   return (
     <>
@@ -63,7 +63,16 @@ function FrontTemplate() {
       />
 
       <Outlet
-        context={[cartItems, onAdd, onRemove, onEmpty, itemsPrice, loginInfo, setLoginInfo]}
+        context={[
+          cartItems,
+          setCartItems,
+          onAdd,
+          onRemove,
+          onEmpty,
+          itemsPrice,
+          loginInfo,
+          setLoginInfo,
+        ]}
       />
 
       <Footer />
