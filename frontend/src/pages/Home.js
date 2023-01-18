@@ -12,7 +12,8 @@ import Team from '../components/Team';
 import Welcome from '../components/Welcome';
 
 function Home() {
-  const [cartItems, onAdd, onRemove, onEmpty, itemsPrice] = useOutletContext();
+  const [cartItems, setCartItems, onAdd, onRemove, onEmpty, itemsPrice, loginInfo, setLoginInfo] =
+    useOutletContext();
 
   useEffect(() => {
     const cont = document.getElementById('body');

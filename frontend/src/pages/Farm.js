@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useOutletContext } from 'react-router-dom';
 import Breakfast from '../components/Breakfast';
 import Clients from '../components/Clients';
 import Products from '../components/HomeComponents/Products';
 import Team from '../components/Team';
 
 function Farm() {
+  const [cartItems, setCartItems, onAdd, onRemove, onEmpty, itemsPrice, loginInfo, setLoginInfo] =
+    useOutletContext();
   useEffect(() => {
     const cont = document.getElementsByTagName('body')[0];
     cont.className =
@@ -161,7 +163,7 @@ function Farm() {
                   </div>
                 </div>
                 <div className="vc_row-full-width" />
-                <Products />
+                <Products onAdd={onAdd} />
 
                 <Breakfast />
 
