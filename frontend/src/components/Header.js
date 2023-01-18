@@ -54,7 +54,7 @@ function Header(props) {
                           <>
                             <h4 className="m-0 text-center">Cart Items</h4>
                             {cartItems.map((item) => (
-                              <div className="cart-item" key={item.id}>
+                              <div className="cart-item mt-3" key={item.id}>
                                 <div className="cart-img">
                                   <Link to={`/shop/view-product/${item.id}`}>
                                     <img
@@ -68,7 +68,7 @@ function Header(props) {
                                   <Link to={`/shop/view-product/${item.id}`}>
                                     {item.product_name}
                                   </Link>
-                                  <p>
+                                  <p className="header_price">
                                     &#2547; {Number(item.product_price).toFixed(2)} x {item.qty} =
                                     &#2547; {Number(item.qty * item.product_price).toFixed(2)}
                                   </p>
@@ -84,7 +84,9 @@ function Header(props) {
                               <div className="cart-subtotal">
                                 <p className="mx-4">
                                   Total:{' '}
-                                  <b className="float-end">&#2547; {itemsPrice.toFixed(2)}</b>
+                                  <span className="float-end header_price">
+                                    &#2547; {itemsPrice.toFixed(2)}
+                                  </span>
                                 </p>
                               </div>
                               <div className="cart-action">

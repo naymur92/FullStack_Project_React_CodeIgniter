@@ -11,11 +11,19 @@ function FrontTemplate() {
   const onAdd = (product) => {
     const exists = cartItems.find((x) => x.id === product.id);
     if (exists) {
-      setCartItems(
-        cartItems.map((x) => (x.id === product.id ? { ...exists, qty: exists.qty + 1 } : x))
-      );
-    } else {
+      // Check Product stock and add in cart list
+      if (exists.qty < product.product_stock) {
+        setCartItems(
+          cartItems.map((x) => (x.id === product.id ? { ...exists, qty: exists.qty + 1 } : x))
+        );
+      } else {
+        alert('Not in stock');
+      }
+      // Check Product stock and add in cart list
+    } else if (product.product_stock > 0) {
       setCartItems([...cartItems, { ...product, qty: 1 }]);
+    } else {
+      alert('Not in stock');
     }
   };
 
@@ -46,7 +54,7 @@ function FrontTemplate() {
     <>
       <Header cartItems={cartItems} onEmpty={onEmpty} itemsPrice={itemsPrice} />
 
-      <Outlet context={[cartItems, onAdd, onRemove, onEmpty]} />
+      <Outlet context={[cartItems, onAdd, onRemove, onEmpty, itemsPrice]} />
 
       <Footer />
     </>

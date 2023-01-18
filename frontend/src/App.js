@@ -2,6 +2,7 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import FrontTemplate from './FrontTemplate';
 import AboutUs from './pages/AboutUs';
 import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
 import Contacts from './pages/Contacts';
 import Farm from './pages/Farm';
 import Home from './pages/Home';
@@ -24,6 +25,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Route>
       </Routes>
     </Router>

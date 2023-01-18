@@ -351,147 +351,31 @@ function dairy_farm_ready_actions() {
     e.preventDefault();
     return false;
   });
-  // Added to cart
-  jQuery('body').bind('added_to_cart', () => {
-    // Update amount on the cart button
-    const total = jQuery('.widget_shopping_cart').eq(0).find('.total .amount').text();
-    if (total != undefined) {
-      jQuery('.top_panel_cart_button .cart_summa').text(total);
-    }
-    // Update count items on the cart button
-    let cnt = 0;
-    jQuery('.widget_shopping_cart_content')
-      .eq(0)
-      .find('.cart_list li')
-      .each(function () {
-        const q = jQuery(this).find('.quantity').html().split(' ', 2);
-        if (!isNaN(q[0])) cnt += Number(q[0]);
-      });
-    const items = jQuery('.top_panel_cart_button .cart_items').eq(0).text().split(' ', 2);
-    items[0] = cnt;
-    jQuery('.top_panel_cart_button .cart_items').text(`${items[0]} ${items[1]}`);
-    // Update data-attr on button
-    jQuery('.top_panel_cart_button').data({
-      items: cnt || 0,
-      summa: total || 0,
-    });
-  });
+  
   // Show cart
   jQuery('.top_panel_middle .top_panel_cart_button, .header_mobile .top_panel_cart_button, .top_panel_middle .top_panel_user_button, .header_mobile .top_panel_user_button').on('click', function (e) {
     jQuery(this).siblings('.sidebar_cart').slideToggle();
     e.preventDefault();
     return false;
   });
-  // Add buttons to quantity
-  jQuery('.woocommerce div.quantity,.woocommerce-page div.quantity').append(
-    '<span class="q_inc"></span><span class="q_dec"></span>'
-  );
-  jQuery('.woocommerce div.quantity').on('click', '>span', function (e) {
-    const f = jQuery(this).siblings('input');
-    if (jQuery(this).hasClass('q_inc')) {
-      f.val(Math.max(0, parseInt(f.val(), 10)) + 1);
-    } else {
-      f.val(Math.max(1, Math.max(0, parseInt(f.val(), 10)) - 1));
+
+  //  Hide Cart
+  jQuery(document).on('click', (e) => {
+    // console.log(jQuery(e.target));
+    if (
+      jQuery(e.target).is('.widget_area.sidebar_cart') === false &&
+      jQuery(e.target).is('.fa.fa-times.text-danger') === false &&
+      jQuery(e.target).parents('.widget_area.sidebar_cart').length != 1
+    ) {
+      jQuery('.sidebar_cart').slideUp();
     }
-    jQuery('.actions .button').removeAttr('disabled');
-    jQuery('.single_add_to_cart_button').removeClass('disabled');
-    e.preventDefault();
-    return false;
   });
+
   // Add stretch behaviour to WooC tabs area
   jQuery('.single-product .woocommerce-tabs')
     .addClass('trx-stretch-width scheme_light')
     .after('<div class="trx-stretch-width-original"></div>');
   dairy_farm_stretch_width();
-
-  // Popup login and register windows
-  //----------------------------------------------
-  jQuery('.popup_link,.popup_login_link,.popup_register_link')
-    .addClass('inited')
-    .on('click', function (e) {
-      const popup = jQuery(jQuery(this).attr('href'));
-      if (popup.length === 1) {
-        dairy_farm_hide_popup(jQuery(popup.hasClass('popup_login') ? '.popup_registration' : '.popup_login'));
-        dairy_farm_show_popup(popup);
-      }
-      e.preventDefault();
-      return false;
-    });
-  jQuery('.popup_wrap').on('click', '.popup_close', function (e) {
-    const popup = jQuery(this).parent();
-    if (popup.length === 1) {
-      dairy_farm_hide_popup(popup);
-    }
-    e.preventDefault();
-    return false;
-  });
-
-  // Bookmarks
-  //----------------------------------------------
-
-  // Add bookmark
-  jQuery('.bookmarks_add').on('click', (e) => {
-    let title = window.document.title.split('|')[0];
-    const url = window.location.href;
-    let list = dairy_farm_get_cookie('dairy_farm_bookmarks');
-    let exists = false;
-    if (list) {
-      try {
-        list = JSON.parse(list);
-      } catch (e) {}
-      if (list.length) {
-        for (let i = 0; i < list.length; i++) {
-          if (list[i].url == url) {
-            exists = true;
-            break;
-          }
-        }
-      }
-    } else list = new Array();
-    if (!exists) {
-      var message_popup = dairy_farm_message_dialog(
-        `<label for="bookmark_title">${DAIRY_FARM_STORAGE.strings.bookmark_title}</label><br><input type="text" id="bookmark_title" name="bookmark_title" value="${title}">`,
-        DAIRY_FARM_STORAGE.strings.bookmark_add,
-        null,
-        (btn, popup) => {
-          if (btn != 1) return;
-          title = message_popup.find('#bookmark_title').val();
-          list.push({ title, url });
-          jQuery('.bookmarks_list').append(
-            `<li><a href="${url}" class="bookmarks_item">${title}<span class="bookmarks_delete icon-cancel" title="${DAIRY_FARM_STORAGE.strings.bookmark_del}"></span></a></li>`
-          );
-          dairy_farm_set_cookie('dairy_farm_bookmarks', JSON.stringify(list), 365);
-          setTimeout(() => {
-            dairy_farm_message_success(
-              DAIRY_FARM_STORAGE.strings.bookmark_added,
-              DAIRY_FARM_STORAGE.strings.bookmark_add
-            );
-          }, DAIRY_FARM_STORAGE.message_timeout / 4);
-        }
-      );
-    } else
-      dairy_farm_message_warning(DAIRY_FARM_STORAGE.strings.bookmark_exists, DAIRY_FARM_STORAGE.strings.bookmark_add);
-    e.preventDefault();
-    return false;
-  });
-
-  // Delete bookmark
-  jQuery('.bookmarks_list').on('click', '.bookmarks_delete', function (e) {
-    const idx = jQuery(this).parent().index();
-    let list = dairy_farm_get_cookie('dairy_farm_bookmarks');
-    if (list) {
-      try {
-        list = JSON.parse(list);
-      } catch (e) {}
-      if (list.length) {
-        list.splice(idx, 1);
-        dairy_farm_set_cookie('dairy_farm_bookmarks', JSON.stringify(list), 365);
-      }
-    }
-    jQuery(this).parent().remove();
-    e.preventDefault();
-    return false;
-  });
 
   // Other settings
   //------------------------------------

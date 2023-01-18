@@ -4,7 +4,7 @@ import { API_PATH } from '../API_PATH';
 
 function Cart() {
   const navigate = useNavigate();
-  const [cartItems, onAdd, onRemove, onEmpty] = useOutletContext();
+  const [cartItems, onAdd, onRemove, onEmpty, itemsPrice] = useOutletContext();
 
   if (cartItems?.length === 0) {
     navigate('/shop');
@@ -74,7 +74,9 @@ function Cart() {
                                   </Link>
                                 </div>
                               </td>
-                              <td>Tk. {Number(item.product_price).toFixed(2)}</td>
+                              <td className="price">
+                                &#2547; {Number(item.product_price).toFixed(2)}
+                              </td>
                               <td>
                                 <div className="cart-plus-minus">
                                   <div
@@ -99,7 +101,9 @@ function Cart() {
                                   </div>
                                 </div>
                               </td>
-                              <td>Tk. {Number(item.qty * item.product_price).toFixed(2)}</td>
+                              <td className="price">
+                                &#2547; {Number(item.qty * item.product_price).toFixed(2)}
+                              </td>
                               <td>
                                 <a role="button" onClick={() => onEmpty(item)}>
                                   <i className="fa fa-trash text-danger" />
@@ -118,12 +122,10 @@ function Cart() {
                               <h4 className="m-0">Cart Totals</h4>
                               <ul className="my-3">
                                 <li>
-                                  <span className="pull-left">Cart Subtotal</span>
-                                  <p className="pull-right">Tk. </p>
-                                </li>
-                                <li>
                                   <span className="pull-left">Order Total</span>
-                                  <p className="pull-right">Tk. </p>
+                                  <p className="pull-right">
+                                    <span className="price"> &#2547; {itemsPrice.toFixed(2)}</span>
+                                  </p>
                                 </li>
                               </ul>
                             </div>

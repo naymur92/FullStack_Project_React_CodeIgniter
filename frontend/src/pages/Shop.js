@@ -1,11 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { Link, useOutletContext } from 'react-router-dom';
 import { API_PATH } from '../API_PATH';
 
 function Shop() {
   const [products, setProducts] = useState([]);
-  const [cartItems, onAdd] = useOutletContext();
+  const [cartItems, onAdd, onRemove, onEmpty, itemsPrice] = useOutletContext();
 
   const getProducts = async () => {
     await axios.get(`${API_PATH}/prodlists`).then((res) => {
@@ -84,10 +84,8 @@ function Shop() {
                           <a href="single-product.html">{product.product_name}</a>
                         </h2>
                         <span className="price">
-                          <span className="woocommerce-Price-amount amount">
-                            <span className="woocommerce-Price-currencySymbol">&#2547; </span>
-                            {Number(product.product_price).toFixed(2)}
-                          </span>
+                          &#2547;
+                          {Number(product.product_price).toFixed(2)}
                         </span>
                         <a
                           role="button"
@@ -114,7 +112,23 @@ function Shop() {
                   {cartItems?.length === 0 ? (
                     <p className="woocommerce-mini-cart__empty-message">No products in the cart.</p>
                   ) : (
-                    <p>Cart Items</p>
+                    <>
+                      <p>
+                        <strong>Total Items: </strong>
+                        {cartItems.length}
+                      </p>
+                      <p>
+                        <strong>Total Quantity: </strong>
+                        {cartItems.reduce((a, c) => a + c.qty, 0)}
+                      </p>
+                      <p>
+                        <strong>Total Price: </strong>{' '}
+                        <span className="price"> &#2547; {itemsPrice.toFixed(2)}</span>
+                      </p>
+                      <Link to="/cart" className="btn btn-warning text-white">
+                        Show Cart
+                      </Link>
+                    </>
                   )}
                 </div>
               </aside>
